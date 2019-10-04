@@ -1,5 +1,5 @@
 
-##Drift Station 13 <BR>
+## Drift Station 13 <BR>
 
 Welcome to Drift Station, currently this code base is not ready for prime time, but hopefuly we will have players playing soon.
 
@@ -24,8 +24,9 @@ See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](http://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
 
 ## Credits
-Drift Station 13 is based from Citadel-Station-13<BR>
-KiloStation was taken from ShadowStation.<BR>
-Drift Station 13, Citadel-Station-13 & KiloStation are based from /tg/station.<BR>
+Ideas & code:<br>
+
+Drift Station 13 contains code taken from Citadel-Station-13 & ShadowStation<BR>
+Drift Station 13 like a lot of servers can be traced back and is based from /tg/station.
 
 Please do note that: "Yori station" was the name of this code base before it was given an offical name.
