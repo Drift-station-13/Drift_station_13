@@ -124,29 +124,6 @@
 	if(user == anchored || !isturf(user.loc))
 		return FALSE
 
-	/* REMOVED BY YORI [VR]
-	//pacifist vore check.
-	if(user.pulling && HAS_TRAIT(user, TRAIT_PACIFISM) && user.voremode) //they can only do heals, noisy guts, absorbing (technically not harm)
-		if(ismob(user.pulling))
-			var/mob/P = user.pulling
-			if(src != user)
-				to_chat(user, "<span class='notice'>You can't risk digestion!</span>")
-				return FALSE
-			else
-				user.vore_attack(user, P, user)
-				return
-
-	//normal vore check.
-	if(user.pulling && user.grab_state == GRAB_AGGRESSIVE && user.voremode)
-		if(ismob(user.pulling))
-			var/mob/P = user.pulling
-			user.vore_attack(user, P, src) // User, Pulled, Predator target (which can be user, pulling, or src)
-			return
-
-	if(user == src) //we want to be able to self click if we're voracious
-		return FALSE
-	*/
-
 	if(!user.pulling || user.pulling != src)
 		user.start_pulling(src, supress_message)
 		return
@@ -180,8 +157,6 @@
 			if(!do_mob(user, src, grab_upgrade_time))
 				return 0
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state || user.a_intent != INTENT_GRAB)
-				return 0
-			if(user.voremode && user.grab_state == GRAB_AGGRESSIVE)
 				return 0
 		user.grab_state++
 		switch(user.grab_state)
