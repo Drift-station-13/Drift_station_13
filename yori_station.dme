@@ -3044,4 +3044,6 @@
 #include "yori_station\code\game\area\shadow_killo_compat.dm"
 #include "yori_station\code\modules\debugging\trace.dm"
 #include "yori_station\code\modules\mob\human_def.dm"
+#include "yori_station\code\modules\mob\robot.dm"
+#include "yori_station\code\modules\mob\robot_modules.dm"
 // END_INCLUDE

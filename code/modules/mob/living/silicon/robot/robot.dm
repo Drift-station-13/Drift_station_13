@@ -237,8 +237,6 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		modulelist["Security"] = /obj/item/robot_module/security
 
-	//TODO: CHECK IF THERE IS ANY NON VORG STUFF: modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
-
 	var/input_module = input("Please, select a module!", "Robot", null, null) as null|anything in modulelist
 	if(!input_module || module.type != /obj/item/robot_module)
 		return
@@ -643,7 +641,11 @@
 /mob/living/silicon/robot/update_icons()
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
-
+	// YS readding custom icons
+	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
+	if(stat == DEAD && module.has_snowflake_deadsprite)
+		icon_state = "[module.cyborg_base_icon]-wreck"
+	// END OF YS add
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
 		pixel_x = initial(pixel_x)
