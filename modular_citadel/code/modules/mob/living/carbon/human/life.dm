@@ -9,8 +9,6 @@
 /mob/living/carbon/human/calculate_affecting_pressure(pressure)
 	if(ismob(loc))
 		return ONE_ATMOSPHERE
-	if(istype(loc, /obj/item/dogborg/sleeper))
-		return ONE_ATMOSPHERE
 	. = ..()
 
 /mob/living/carbon/human/update_health_hud(shown_health_amount)

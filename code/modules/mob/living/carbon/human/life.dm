@@ -58,8 +58,6 @@
 	if(istype(loc, /obj/belly)) //START OF CIT CHANGES - Makes it so you don't suffocate while inside vore organs. Remind me to modularize this some time - Bhijn
 		return ONE_ATMOSPHERE
 	*/
-	if(istype(loc, /obj/item/dogborg/sleeper))
-		return ONE_ATMOSPHERE //END OF CIT CHANGES
 	return pressure
 
 
@@ -137,8 +135,6 @@
 /mob/living/carbon/human/proc/get_thermal_protection()
 	var/thermal_protection = 0 //Simple check to estimate how protected we are against multiple temperatures
 	//CITADEL EDIT Vore code required overrides
-	if(istype(loc, /obj/item/dogborg/sleeper))
-		return FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	if(ismob(loc))
 		return FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	/* REMOVED BY YORI [VR]

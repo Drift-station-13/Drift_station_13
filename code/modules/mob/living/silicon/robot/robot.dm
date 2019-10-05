@@ -237,7 +237,7 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		modulelist["Security"] = /obj/item/robot_module/security
 
-	modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
+	//TODO: CHECK IF THERE IS ANY NON VORG STUFF: modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
 
 	var/input_module = input("Please, select a module!", "Robot", null, null) as null|anything in modulelist
 	if(!input_module || module.type != /obj/item/robot_module)
@@ -586,13 +586,6 @@
 
 /mob/living/silicon/robot/crowbar_act(mob/living/user, obj/item/I) //TODO: make fucking everything up there in that attackby() proc use the proper tool_act() procs. But honestly, who has time for that? 'cause I know for sure that you, the person reading this, sure as hell doesn't.
 	var/validbreakout = FALSE
-	for(var/obj/item/dogborg/sleeper/S in held_items)
-		if(!LAZYLEN(S.contents))
-			continue
-		if(!validbreakout)
-			visible_message("<span class='notice'>[user] wedges [I] into the crevice separating [S] from [src]'s chassis, and begins to pry...</span>", "<span class='notice'>You wedge [I] into the crevice separating [S] from [src]'s chassis, and begin to pry...</span>")
-		validbreakout = TRUE
-		S.go_out()
 	if(validbreakout)
 		return TRUE
 	return ..()
@@ -650,23 +643,6 @@
 /mob/living/silicon/robot/update_icons()
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
-	//Citadel changes start here - Allows modules to use different icon files, and allows modules to specify a pixel offset
-	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
-	if(laser)
-		add_overlay("laser")//Is this even used??? - Yes borg/inventory.dm
-	if(disabler)
-		add_overlay("disabler")//ditto
-
-	if(sleeper_g && module.sleeper_overlay)
-		add_overlay("[module.sleeper_overlay]_g[sleeper_nv ? "_nv" : ""]")
-	if(sleeper_r && module.sleeper_overlay)
-		add_overlay("[module.sleeper_overlay]_r[sleeper_nv ? "_nv" : ""]")
-	if(stat == DEAD && module.has_snowflake_deadsprite)
-		icon_state = "[module.cyborg_base_icon]-wreck"
-
-	if(module.cyborg_pixel_offset)
-		pixel_x = module.cyborg_pixel_offset
-	//End of citadel changes
 
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
@@ -693,18 +669,6 @@
 		head_overlay.pixel_y += hat_offset
 		add_overlay(head_overlay)
 	update_fire()
-
-	if(client && stat != DEAD && module.dogborg == TRUE)
-		if(resting)
-			if(sitting)
-				icon_state = "[module.cyborg_base_icon]-sit"
-			if(bellyup)
-				icon_state = "[module.cyborg_base_icon]-bellyup"
-			else if(!sitting && !bellyup)
-				icon_state = "[module.cyborg_base_icon]-rest"
-			cut_overlays()
-		else
-			icon_state = "[module.cyborg_base_icon]"
 
 /mob/living/silicon/robot/proc/self_destruct()
 	if(emagged)
@@ -1080,7 +1044,7 @@
 	designation = module.name
 	if(hands)
 		hands.icon_state = module.moduleselect_icon
-		hands.icon = (module.moduleselect_alternate_icon ? module.moduleselect_alternate_icon : initial(hands.icon)) //CITADEL CHANGE - allows module select icons to use a different icon file
+		//hands.icon = (module.moduleselect_alternate_icon ? module.moduleselect_alternate_icon : initial(hands.icon)) //CITADEL CHANGE - allows module select icons to use a different icon file
 	if(module.can_be_pushed)
 		status_flags |= CANPUSH
 	else
