@@ -1,0 +1,10 @@
+Current todo:
+
+Port Donut - from older tg code
+Fix Clothing on players [code/modules/client]
+Remove Holo PDAs
+Change AI display ui
+Remove furry & ERP items
+
+Start removing tgui
+convert ui to use datum/browser or (custom thing)
