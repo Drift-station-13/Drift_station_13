@@ -2926,7 +2926,6 @@
 #include "modular_citadel\code\modules\client\client_procs.dm"
 #include "modular_citadel\code\modules\client\preferences.dm"
 #include "modular_citadel\code\modules\client\preferences_savefile.dm"
-#include "modular_citadel\code\modules\client\preferences_toggles.dm"
 #include "modular_citadel\code\modules\client\loadout\__donator.dm"
 #include "modular_citadel\code\modules\client\loadout\_loadout.dm"
 #include "modular_citadel\code\modules\client\loadout\_medical.dm"

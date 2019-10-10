@@ -14,7 +14,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 8
 
 	//non-preference stuff
 	var/muted = 0
@@ -72,11 +71,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
 	var/underwear = "Nude"				//underwear type
-	var/undie_color = "FFF"
+	var/undie_color = "FFFFFF"
 	var/undershirt = "Nude"				//undershirt type
-	var/shirt_color = "FFF"
+	var/shirt_color = "FFFFFF"
 	var/socks = "Nude"					//socks type
-	var/socks_color = "FFF"
+	var/socks_color = "FFFFFF"
 	var/backbag = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/hair_style = "Bald"				//Hair type
@@ -86,20 +85,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-
 	var/list/features = list("mcolor" = "FFF",
 		"tail_lizard" = "Smooth",
 		"tail_human" = "None",
-		"mcolor" = "FFF",
 		"mcolor2" = "FFF",
 		"mcolor3" = "FFF",
 		"taur" = "None",
+
 		"exhibitionist" = FALSE,
+		"has_cock" = FALSE,
+		"has_sheath" = FALSE,
+		"has_balls" = FALSE,
+		"has_ovi" = FALSE,
+		"has_eggsack" = FALSE,
+		"has_breasts" = FALSE,
+		"has_vag" = FALSE,
+		"has_womb" = FALSE,
+
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = ""
 		)
-
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -203,9 +209,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<HR>"
 
 	switch(current_tab)
-		/*==========================
-		#### Character Settings ####
-		===========================*/
 		if (0) // Character Settings#
 			if(path)
 				var/savefile/S = new /savefile(path)
@@ -262,9 +265,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
 			dat += "</tr></table>"
 
-		/*============================
-		#### Character Appearance ####
-		============================*/
+		//Character Appearance
 		if(2)
 			if(path)
 				var/savefile/S = new /savefile(path)
@@ -286,7 +287,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			update_preview_icon()
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			// FLAVOR TEXT
 			dat += "<h2>Flavor Text</h2>"
 			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
 			if(lentext(features["flavor_text"]) <= 40)
@@ -296,10 +296,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[features["flavor_text"]]"
 			else
 				dat += "[TextPreview(features["flavor_text"])]...<BR>"
-
 			dat += "<h2>Body</h2>"
 			dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.id]</a><BR>"
+			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Random Body</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -375,6 +375,31 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			if("frills" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Frills</h3>"
+
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=frills;task=input'>[features["frills"]]</a>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("spines" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Spines</h3>"
+
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=spines;task=input'>[features["spines"]]</a>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
 			if("legs" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -387,7 +412,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
-
 			if("ipc_screen" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -424,22 +448,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Clothing & Equipment</h2>"
 			dat += "<b>Underwear:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=underwear;task=input'>[underwear]</a>"
 			if(UNDIE_COLORABLE(GLOB.underwear_list[underwear]))
-				dat += "<b>Underwear Color:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=undie_color;task=input'>[undie_color]</a>"
+				dat += "<b>Underwear Color:</b> <span style='border:1px solid #161616; background-color: #[undie_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=undie_color;task=input'>Change</a><BR>"
 			dat += "<b>Undershirt:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=undershirt;task=input'>[undershirt]</a>"
 			if(UNDIE_COLORABLE(GLOB.undershirt_list[undershirt]))
-				dat += "<b>Undershirt Color:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=shirt_color;task=input'>[shirt_color]</a>"
+				dat += "<b>Undershirt Color:</b> <span style='border:1px solid #161616; background-color: #[shirt_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=shirt_color;task=input'>Change</a><BR>"
 			dat += "<b>Socks:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=socks;task=input'>[socks]</a>"
 			if(UNDIE_COLORABLE(GLOB.socks_list[socks]))
-				dat += "<b>Socks Color:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=socks_color;task=input'>[socks_color]</a>"
+				dat += "<b>Socks Color:</b> <span style='border:1px solid #161616; background-color: #[socks_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=socks_color;task=input'>Change</a><BR>"
 			dat += "<b>Backpack:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=bag;task=input'>[backbag]</a>"
 			dat += "<b>Jumpsuit:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a><BR>"
 			dat += "<b>Uplink Location:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a>"
 			dat += "</td>"
 
-		if (1)
-		/*========================
-		#### Game Preferences ####
-		========================*/
+			dat += "</tr></table>"
+
+		if (1) // Game Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>General Settings</h2>"
 			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
@@ -482,8 +505,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "</td>"
 
 			dat +="<td width='300px' height='300px' valign='top'>"
-			dat += "<h2>Yori station Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
-
+			dat += "<h2>Drift station Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 			dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
@@ -1719,40 +1741,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			switch(href_list["preference"])
 				//CITADEL PREFERENCES EDIT - I can't figure out how to modularize these, so they have to go here. :c -Pooj
-				if("genital_colour")
-					features["genitals_use_skintone"] = !features["genitals_use_skintone"]
-				if("arousable")
-					arousable = !arousable
-				if("lewdchem")
-					lewdchem = !lewdchem
-				if("has_cock")
-					features["has_cock"] = !features["has_cock"]
-					if(features["has_cock"] == FALSE)
-						features["has_balls"] = FALSE
-				if("has_balls")
-					features["has_balls"] = !features["has_balls"]
-				if("has_ovi")
-					features["has_ovi"] = !features["has_ovi"]
-				if("has_eggsack")
-					features["has_eggsack"] = !features["has_eggsack"]
-				if("balls_internal")
-					features["balls_internal"] = !features["balls_internal"]
-				if("eggsack_internal")
-					features["eggsack_internal"] = !features["eggsack_internal"]
-				if("has_breasts")
-					features["has_breasts"] = !features["has_breasts"]
-					if(features["has_breasts"] == FALSE)
-						features["breasts_producing"] = FALSE
-				if("breasts_producing")
-					features["breasts_producing"] = !features["breasts_producing"]
-				if("has_vag")
-					features["has_vag"] = !features["has_vag"]
-					if(features["has_vag"] == FALSE)
-						features["has_womb"] = FALSE
-				if("has_womb")
-					features["has_womb"] = !features["has_womb"]
-				if("exhibitionist")
-					features["exhibitionist"] = !features["exhibitionist"]
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
@@ -1779,10 +1767,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(unlock_content)
 						toggles ^= MEMBER_PUBLIC
 				if("gender")
-					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) in list(MALE,FEMALE,"nonbinary","object")
+					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) in list(MALE,FEMALE,"object")
 					switch(chosengender)
-						if("nonbinary")
-							chosengender = PLURAL
 						if("object")
 							chosengender = NEUTER
 					gender = chosengender
@@ -1864,17 +1850,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (parent && parent.mob && parent.mob.hud_used)
 						parent.mob.hud_used.update_parallax_pref(parent.mob)
 
-				// Citadel edit - Prefs don't work outside of this. :c
-				if("hound_sleeper")
-					cit_toggles ^= MEDIHOUND_SLEEPER
-
-				if("toggleeatingnoise")
-					cit_toggles ^= EATING_NOISES
-
-				if("toggledigestionnoise")
-					cit_toggles ^= DIGESTION_NOISES
-				//END CITADEL EDIT
-
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
@@ -1893,20 +1868,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("load")
 					load_preferences()
 					load_character()
-					/* REMOVED BY YORI [VR]
-					if(parent && parent.prefs_vr)
-						attempt_vr(parent.prefs_vr,"load_vore","")
-					*/
+
+
 
 				if("changeslot")
 					if(!load_character(text2num(href_list["num"])))
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
-					/* REMOVED BY YORI [VR]
-					if(parent && parent.prefs_vr)
-						attempt_vr(parent.prefs_vr,"load_vore","")
-					*/
+
+
 
 				if("tab")
 					if (href_list["tab"])
@@ -1979,18 +1950,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.hair_style = hair_style
 	character.facial_hair_style = facial_hair_style
 	character.underwear = underwear
-	/* REMOVED BY YORI [ERP]
+
 	character.saved_underwear = underwear
 	character.undershirt = undershirt
 	character.saved_undershirt = undershirt
 	character.socks = socks
-
 	character.saved_socks = socks
-	*/
 	character.undie_color = undie_color
 	character.shirt_color = shirt_color
 	character.socks_color = socks_color
-
 
 
 	character.backbag = backbag
