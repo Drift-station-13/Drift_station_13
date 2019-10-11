@@ -3,6 +3,7 @@
 /area/vacant_room/commissary
 	name = "Vacant Commissary"
 	icon_state = "vacant_commissary"
+	icon = 'yori_station/code/game/area/areas.dmi'
 
 
 /*

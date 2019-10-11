@@ -20,4 +20,15 @@ Look into  features["mcolor2"] & 3
 Look into what the save file updater does and strip it down
 Also implment our own save file version managment
 
+TG IMPLMENTED SMART CABLES in https://github.com/tgstation/tgstation/commit/65e9888fa60a22dfba6007878664c9607b8f7f4f
+
+ERP SHIT in MOD_CIT/code/modules/mob/living/carbon/human/species_type/jellypeople.dm
+
+ -- [Temp log] --
+
+ =-= [Mini tutorials] =-=
+  -- codebase time travle
+    1.  git clone https://github.com/tgstation/tgstation.git
+    2.  cd tgstation
+    3.  git checkout `git rev-list -n 1 --first-parent --before="2019-06-20 00:00" master`
 ===== [HYPER's NOTES] ======

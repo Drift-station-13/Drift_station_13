@@ -214,3 +214,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 		CRASH("Wrong disease type passed in.")
 	var/datum/disease/D = new disease_type()
 	return list(component_type,D)
+
+/obj/effect/mapping_helpers/dead_body_placer
+	name = "Dead Body placer"
+	late = TRUE
+	icon_state = "deadbodyplacer"
+	var/bodycount = 2 //number of bodies to spawn

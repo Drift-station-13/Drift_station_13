@@ -13,6 +13,7 @@
 		#include "map_files\BoxStation\BoxStation.dmm"
 
 		#include "map_files\KiloStation\KiloStation.dmm"
+		#include "map_files\Donutstation\Donutstation.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"

@@ -17,8 +17,11 @@ map boxstation
 	voteweight 0.25
 endmap
 
+map donutstation
+  default
+endmap
+
 map kilostation
-	default
 endmap
 
 map metastation
