@@ -2,7 +2,7 @@
 /obj/yori_station/debug/not_implemented
 	name = "error"
 	desc = "Hey cool you found an error, please report this ~Drift station dev."
-	icon_state = "random_bedsheet"
+	icon_state = "error"
 	icon = 'yori_station/icons/obj/misc.dmi'
 
 /area/yori_station/debug/not_implemented
