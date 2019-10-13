@@ -1,4 +1,4 @@
-//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE 
 "aa" = (
 /turf/open/space/basic,
 /area/space)
@@ -3220,6 +3220,10 @@
 /obj/item/reagent_containers/glass/beaker/bluespace,
 /turf/open/floor/grass,
 /area/hydroponics)
+"Th" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel,
+/area/engine/atmos)
 "Tp" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6668,7 +6672,7 @@ ut
 Fg
 ou
 Fg
-Fg
+Th
 Kx
 ah
 bs
