@@ -58,6 +58,5 @@
 	wine_power = 70 //Water to wine, baby.
 	wine_flavor = "divinity"
 
-/obj/item/reagent_containers/food/snacks/grown/holymelon/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE) //deliver us from evil o melon god
+// Removed antimagic from holymelon imported
+// same as this https://github.com/Citadel-Station-13/Citadel-Station-13/pull/9351
