@@ -288,32 +288,25 @@
 	icon = "thenet"
 	desc = "You just seem to get caught up in it for hours."
 
-/datum/barsign/maidcafe
-	name = "Maid Cafe"
-	icon = "maidcafe"
-	desc = "Welcome back, master!"
-
 /datum/barsign/the_lightbulb
 	name = "The Lightbulb"
 	icon = "the_lightbulb"
 	desc = "A cafe popular among moths and moffs. Once shut down for a week after the bartender used mothballs to protect her spare uniforms."
 
-/datum/barsign/cybersylph
-	name = "Cyber Sylph's"
-	icon = "cybersylph"
-	desc = "A cafe renowed for its out-of-boundaries futuristic insignia."
-
-/datum/barsign/meow_mix
-	name = "Meow Mix"
-	icon = "meow_mix"
-	desc = "No, we don't serve catnip, officer!"
-
 /datum/barsign/hiddensigns
 	hidden = TRUE
 
+/datum/barsign/vault13
+	name = "Vault13"
+	icon = "vault13"
+	desc = "Vault13 where the stone is as cold as the drinks."
+
+/datum/barsign/spaceasshole
+	name = "Dwarf Fortress"
+	icon = "dwarffortress"
+	desc = "Rock Solid"
 
 //Hidden signs list below this point
-
 
 
 /datum/barsign/hiddensigns/empbarsign
