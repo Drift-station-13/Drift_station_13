@@ -1,9 +1,10 @@
-sound/music/- Set Me Free - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
-sound/music/- The Crooked Cue - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
-sound/music/- Tightrope - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
 sound/music/flytothemoon_otomatone.ogg
-sound/music/- The Basketball Boys Are Back In Business (VGM style original).ogg
-sound/music/Space Station 13 - Musique dintro n°2 ( Nanotrasen ).ogg
+sound/music/Jukebox_Set_Me_Free.ogg
+sound/music/Jukebox_The Crooked_Cue.ogg
+sound/music/Jukebox_Tightrope.ogg
+sound/music/nelward.ogg
 sound/music/space_asshole.ogg
-sound/music/ss13 THUNDERDOMEogg.ogg
+sound/music/Space_Station_13_Nanotrasen.ogg
+sound/music/Spectronosis.ogg
+sound/music/ss13_THUNDERDOME.ogg
 sound/music/theend.ogg
