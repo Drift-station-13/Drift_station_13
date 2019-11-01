@@ -1532,7 +1532,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "The Syndicate surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
 			a Syndicate brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
-	cost = 3
+	cost = 1
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Syndicate Surgery Duffel Bag"
@@ -1546,7 +1546,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
 			as well as talk on an encrypted Syndicate channel with other agents that have the same key."
 	item = /obj/item/encryptionkey/syndicate
-	cost = 2
+	cost = 0
 	surplus = 75
 	restricted = TRUE
 
@@ -1603,7 +1603,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "An implant injected into the body and later activated at the user's will. It will attempt to free the \
 			user from common restraints such as handcuffs."
 	item = /obj/item/storage/box/syndie_kit/imp_freedom
-	cost = 5
+	cost = 2
 
 /datum/uplink_item/implants/microbomb
 	name = "Microbomb Implant"
@@ -1628,7 +1628,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "An implant injected into the body, allowing the use of an internal Syndicate radio. \
 			Used just like a regular headset, but can be disabled to use external headsets normally and to avoid detection."
 	item = /obj/item/storage/box/syndie_kit/imp_radio
-	cost = 4
+	cost = 2
 	restricted = TRUE
 
 /datum/uplink_item/implants/reviver
@@ -1664,7 +1664,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "An implant injected into the body, and later activated at the user's will. Has no telecrystals and must be charged by the use of physical telecrystals. \
 			Undetectable (except via surgery), and excellent for escaping confinement."
 	item = /obj/item/storage/box/syndie_kit/imp_uplink
-	cost = 4
+	cost = 1
 	// An empty uplink is kinda useless.
 	surplus = 0
 	restricted = TRUE
@@ -1704,16 +1704,24 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			blast wave \"projectile\". Aspiring scientists may find this highly useful, as forcing the pressure shockwave into a narrow angle seems to be able to bypass whatever quirk of physics \
 			disallows explosive ranges above a certain distance, allowing for the device to use the theoretical yield of a transfer valve bomb, instead of the factual yield."
 	item = /obj/item/gun/blastcannon
-	cost = 14							//High cost because of the potential for extreme damage in the hands of a skilled gas masked scientist.
+	cost = 8							//High cost because of the potential for extreme damage in the hands of a skilled gas masked scientist.
 	restricted_roles = list("Research Director", "Scientist")
+
+/datum/uplink_item/role_restricted/alientech
+	name = "Alien Research Disk"
+	desc = "A technology disk holding a terabyte of highly confidential abductor technology. \
+			Simply insert into research console of choice and import the files from the disk. You might research some useful gear from this."
+	item = /obj/item/disk/tech_disk/abductor
+	cost = 8
+	restricted_roles = list("Research Director", "Scientist", "Roboticist")
 
 /datum/uplink_item/role_restricted/brainwash_disk
 	name = "Brainwashing Surgery Program"
 	desc = "A disk containing the procedure to perform a brainwashing surgery, allowing you to implant an objective onto a target. \
 	Insert into an Operating Console to enable the procedure."
 	item = /obj/item/disk/surgery/brainwashing
-	restricted_roles = list("Medical Doctor")
-	cost = 3
+	restricted_roles = list("Medical Doctor", "Roboticist")
+	cost = 1
 
 /datum/uplink_item/role_restricted/clown_bomb
 	name = "Clown Bomb"
@@ -1724,8 +1732,9 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			be defused, and some crew may attempt to do so. \
 			The bomb core can be pried out and manually detonated with other explosives."
 	item = /obj/item/sbeacondrop/clownbomb
-	cost = 15
+	cost = 10
 	restricted_roles = list("Clown")
+
 
 /*
 /datum/uplink_item/role_restricted/clowncar
