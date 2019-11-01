@@ -106,9 +106,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/dat = id ? "<span class='notice'>Alt-click to remove the id.</span>" : ""
 	if(inserted_item && (!isturf(loc)))
 		dat += "\n<span class='notice'>Ctrl-click to remove [inserted_item].</span>"
+	/*
 	if(LAZYLEN(GLOB.pda_reskins))
 		dat += "\n<span class='notice'>Ctrl-shift-click it to reskin it.</span>"
 	to_chat(user, dat)
+	*/
 
 /obj/item/pda/Initialize()
 	. = ..()
@@ -123,7 +125,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		inserted_item =	new /obj/item/pen(src)
 	update_icon(FALSE, TRUE)
-
+/*
 /obj/item/pda/CtrlShiftClick(mob/living/user)
 	. = ..()
 	if(GLOB.pda_reskins && user.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
@@ -145,6 +147,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	icon = new_icon
 	update_icon(FALSE, TRUE)
 	to_chat(M, "[src] is now skinned as '[choice]'.")
+*/
 
 /obj/item/pda/proc/set_new_overlays()
 	if(!overlays_offsets || !(icon in overlays_offsets))
@@ -182,10 +185,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 			else
 				font_index = MODE_MONO
 				font_mode = FONT_MONO
-		var/pref_skin = GLOB.pda_reskins[user.client.prefs.pda_skin]
+		/* var/pref_skin = GLOB.pda_reskins[user.client.prefs.pda_skin]
 		if(icon != pref_skin)
 			icon = pref_skin
 			update_icon(FALSE, TRUE)
+		*/
 		equipped = TRUE
 
 /obj/item/pda/proc/update_label()

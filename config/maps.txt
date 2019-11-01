@@ -18,7 +18,6 @@ map boxstation
 endmap
 
 map donutstation
-  default
 endmap
 
 map kilostation
@@ -30,6 +29,7 @@ map metastation
 endmap
 
 map pubbystation
+	default
 endmap
 
 map omegastation
