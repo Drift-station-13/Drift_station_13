@@ -1,27 +1,9 @@
-sound/ambience/title1.ogg
-sound/ambience/title2.ogg
-sound/ambience/title3.ogg
-sound/ambience/title4.ogg
-sound/misc/i_did_not_grief_them.ogg
-sound/ambience/clown.ogg
-sound/music/1.ogg
-sound/music/carmenmirandasghost.ogg
-sound/music/century21march.ogg
-sound/music/dawsonschristian.ogg
-sound/music/gaytony.ogg
-sound/music/gi.ogg
-sound/music/moonbaseoddity.ogg
-sound/music/space_asshole.ogg
-sound/music/space_oddity.ogg
-sound/music/starman.ogg
-sound/music/torvus.ogg
-sound/music/shootingstars.ogg
-sound/music/oceanman.ogg
-sound/music/indeep.ogg
-sound/music/goodbyemoonmen.ogg
+sound/music/- Set Me Free - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
+sound/music/- The Crooked Cue - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
+sound/music/- Tightrope - Minnesota Fats - Pool Legend Mega DriveSega Genesis.ogg
 sound/music/flytothemoon_otomatone.ogg
-sound/music/milkyway.ogg
-sound/music/rocketridersprayer.ogg
+sound/music/- The Basketball Boys Are Back In Business (VGM style original).ogg
+sound/music/Space Station 13 - Musique dintro n°2 ( Nanotrasen ).ogg
+sound/music/space_asshole.ogg
+sound/music/ss13 THUNDERDOMEogg.ogg
 sound/music/theend.ogg
-sound/music/flyinghigh.ogg
-sound/music/samsara.ogg
