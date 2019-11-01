@@ -174,7 +174,7 @@
 
 /obj/item/robot_module/engineering/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/list/engymodels = list("Default", "Default - Treads", "Heavy", "Sleek", "Marina", "Can", "Spider", "Loader","Handy", "Standard", "Conagher", "Noble-H", "Noble")
+	var/list/engymodels = list("Default", "Default - Treads", "Heavy", "Sleek", "Marina", "Can", "Spider", "Loader","Handy", "Standard", "Conagher", "Noble-H", "Noble", "Xenobot")
 	if(R.client && R.client.ckey in list("nezuli"))
 		engymodels += "Alina"
 	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in engymodels
@@ -221,6 +221,9 @@
 		if("Noble")
 			cyborg_base_icon = "Noble-ENG"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+		if("Xenobot")
+			cyborg_base_icon = "xenobot"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 	return ..()
 
 /obj/item/robot_module/miner/be_transformed_to(obj/item/robot_module/old_module)
