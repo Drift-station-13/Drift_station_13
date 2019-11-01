@@ -15,7 +15,7 @@
 	buckle_lying = FALSE
 	buckle_requires_restraints = TRUE
 
-	var/power_gen = 1000 // Enough to power a single APC. 4000 output with T4 capacitor.
+	var/power_gen = 1250 // Enough to power a single APC. 4000 output with T4 capacitor.
 
 	var/irradiate = TRUE // RTGs irradiate surroundings, but only when panel is open.
 
@@ -45,7 +45,7 @@
 
 /obj/machinery/power/rtg/advanced
 	desc = "An advanced RTG capable of moderating isotope decay, increasing power output but reducing lifetime. It uses plasma-fueled radiation collectors to increase output even further."
-	power_gen = 1250 // 2500 on T1, 10000 on T4.
+	power_gen = 2250 // 2500 on T1, 10000 on T4.
 	circuit = /obj/item/circuitboard/machine/rtg/advanced
 
 // Void Core, power source for Abductor ships and bases.
