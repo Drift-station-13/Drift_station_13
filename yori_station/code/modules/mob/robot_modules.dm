@@ -73,7 +73,7 @@
 
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Noir", "Dark Noir", "Omoikane")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Noir", "Dark Noir", "Omoikane", "Xenobot")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -91,6 +91,9 @@
 		if("Omoikane")
 			cyborg_base_icon = "omoikane"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+		if("Xenobot")
+			cyborg_base_icon = "xenobot-peace"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 	return ..()
 
 /obj/item/robot_module/security/be_transformed_to(obj/item/robot_module/old_module)
