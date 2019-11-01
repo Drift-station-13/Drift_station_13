@@ -8,3 +8,4 @@ sound/music/Space_Station_13_Nanotrasen.ogg
 sound/music/Spectronosis.ogg
 sound/music/ss13_THUNDERDOME.ogg
 sound/music/theend.ogg
+sound/music/Pilotredsun_Useful.ogg
