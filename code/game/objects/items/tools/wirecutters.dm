@@ -85,8 +85,13 @@
 	random_color = FALSE
 
 /obj/item/wirecutters/cyborg
-	name = "wirecutters"
-	desc = "This cuts wires."
+	name = "automatic wirecutters"
+	desc = "Wire cutting has never been so easy."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "cutter_borg"
+	item_state = "cutters"
+	usesound = 'sound/items/jaws_cut.ogg'
+	random_color = FALSE
 	toolspeed = 0.5
 
 /obj/item/wirecutters/power

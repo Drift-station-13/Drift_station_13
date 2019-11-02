@@ -140,8 +140,11 @@
 /obj/item/screwdriver/cyborg
 	name = "powered screwdriver"
 	desc = "An electrical screwdriver, designed to be both precise and quick."
-	usesound = 'sound/items/drill_use.ogg'
+	icon = 'icons/obj/device.dmi'
+	icon_state = "screw_borg"
+	item_state = "screwdriver"
 	toolspeed = 0.5
+	random_color = FALSE
 
 /obj/item/screwdriver/advanced
 	name = "advanced screwdriver"
