@@ -52,7 +52,7 @@
 	desc = "A huge chunk of warm metal. The clanging of machinery emanates from within."
 	explosion_block = 5
 	hardness = 10
-	slicing_duration = 80
+	slicing_duration = 100
 	sheet_type = /obj/item/stack/tile/brass
 	sheet_amount = 1
 	girder_type = /obj/structure/destructible/clockwork/wall_gear
