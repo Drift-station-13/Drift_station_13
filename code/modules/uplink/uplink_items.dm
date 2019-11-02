@@ -1715,7 +1715,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	cost = 8
 	restricted_roles = list("Research Director", "Scientist", "Roboticist")
 
-/datum/uplink_item/role_restricted/alientech
+/datum/uplink_item/role_restricted/syndiemmi
 	name = "Syndicate MMI"
 	desc = "Syndicate's own brand of MMI. It enforces laws designed to help Syndicate agents achieve their goals upon cyborgs and AIs created with it."
 	item = /obj/item/mmi/syndie
