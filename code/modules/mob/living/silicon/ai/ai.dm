@@ -15,7 +15,7 @@
 /mob/living/silicon/ai
 	name = "AI"
 	icon = 'icons/mob/ai.dmi'
-	icon_state = "ai"
+	icon_state = "ai-drift"
 	anchored = TRUE
 	density = TRUE
 	canmove = FALSE
