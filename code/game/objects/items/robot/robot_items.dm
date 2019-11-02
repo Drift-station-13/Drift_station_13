@@ -150,6 +150,7 @@
 
 /obj/item/borg/charger
 	name = "power connector"
+	desc = "A power tap to and from a cyborg cell allowing a borg to draw and fill from a powercell that is on the ground."
 	icon_state = "charger_draw"
 	item_flags = NOBLUDGEON
 	var/mode = "draw"

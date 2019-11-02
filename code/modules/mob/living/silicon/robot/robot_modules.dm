@@ -254,6 +254,7 @@
 		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
+		/obj/item/borg/charger,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/transforming/energy/sword/cyborg)
 	ratvar_modules = list(
@@ -285,6 +286,7 @@
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
+		/obj/item/borg/charger,
 		/obj/item/sensor_device)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	ratvar_modules = list(
@@ -324,6 +326,7 @@
 		/obj/item/stack/sheet/rglass/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
+		/obj/item/borg/charger,
 		/obj/item/stack/cable_coil/cyborg)
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
@@ -343,6 +346,7 @@
 		/obj/item/gun/energy/disabler/cyborg,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew,
+		/obj/item/borg/charger,
 		/obj/item/wantedposterposter)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
@@ -368,6 +372,7 @@
 		/obj/item/borg/cyborghug/peacekeeper,
 		/obj/item/extinguisher,
 		/obj/item/megaphone,
+		/obj/item/borg/charger,
 		/obj/item/borg/projectile_dampen)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/peace/hacked)
 	ratvar_modules = list(
@@ -396,6 +401,7 @@
 		/obj/item/mop/cyborg,
 		/obj/item/lightreplacer/cyborg,
 		/obj/item/holosign_creator,
+		/obj/item/borg/charger,
 		/obj/item/reagent_containers/spray/cyborg_drying)
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(
@@ -444,10 +450,12 @@
 		/obj/item/pneumatic_cannon/pie/selfcharge/cyborg,
 		/obj/item/razor,					//killbait material
 		/obj/item/lipstick/purple,
+		/obj/item/megaphone,
 		/obj/item/reagent_containers/spray/waterflower/cyborg,
 		/obj/item/borg/cyborghug/peacekeeper,
 		/obj/item/borg/lollipop/clown,
 		/obj/item/picket_sign/cyborg,
+		/obj/item/borg/charger,
 		/obj/item/reagent_containers/borghypo/clown,
 		/obj/item/extinguisher/mini)
 	emag_modules = list(
@@ -477,6 +485,7 @@
 		/obj/item/rsf/cyborg,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/lighter,
+		/obj/item/borg/charger,
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
 		/obj/item/borg/lollipop)
@@ -508,6 +517,7 @@
 		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/gun/energy/kinetic_accelerator/cyborg,
 		/obj/item/gps/cyborg,
+		/obj/item/borg/charger,
 		/obj/item/stack/marker_beacon)
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
@@ -527,6 +537,7 @@
 		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
 		/obj/item/card/emag,
 		/obj/item/crowbar/cyborg,
+		/obj/item/borg/charger,
 		/obj/item/pinpointer/syndicate_cyborg)
 
 	ratvar_modules = list(
@@ -568,6 +579,7 @@
 		/obj/item/pinpointer/syndicate_cyborg,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/gun/medbeam,
+		/obj/item/borg/charger,
 		/obj/item/organ_storage)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
