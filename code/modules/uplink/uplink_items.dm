@@ -1532,7 +1532,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "The Syndicate surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
 			a Syndicate brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
-	cost = 1
+	cost = 3
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Syndicate Surgery Duffel Bag"
@@ -1705,7 +1705,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			disallows explosive ranges above a certain distance, allowing for the device to use the theoretical yield of a transfer valve bomb, instead of the factual yield."
 	item = /obj/item/gun/blastcannon
 	cost = 8							//High cost because of the potential for extreme damage in the hands of a skilled gas masked scientist.
-	restricted_roles = list("Research Director", "Scientist")
+	restricted_roles = list("Research Director", "Scientist", "Roboticist")
 
 /datum/uplink_item/role_restricted/alientech
 	name = "Alien Research Disk"
@@ -1714,6 +1714,13 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	item = /obj/item/disk/tech_disk/abductor
 	cost = 8
 	restricted_roles = list("Research Director", "Scientist", "Roboticist")
+
+/datum/uplink_item/role_restricted/alientech
+	name = "Syndicate MMI"
+	desc = "Syndicate's own brand of MMI. It enforces laws designed to help Syndicate agents achieve their goals upon cyborgs and AIs created with it."
+	item = /obj/item/mmi/syndie
+	cost = 1
+	restricted_roles = list("Roboticist")
 
 /datum/uplink_item/role_restricted/brainwash_disk
 	name = "Brainwashing Surgery Program"
