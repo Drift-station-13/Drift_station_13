@@ -1234,3 +1234,21 @@
 		if("Belly up")
 			bellyup = 1
 	update_icons()
+
+
+/mob/living/silicon/robot/verb/self_self_destruct()
+	set category = "Robot Commands"
+	set name = "Self Destruct"//guess I'll Die
+
+	if(usr.stat == DEAD)
+		return //won't work if dead
+
+	if(alert("WARNING: Are you sure you wish to self-destruct? This action cannot be undone!",,"Yes","No") != "Yes")
+		return
+
+	var/turf/T = get_turf(usr)
+	message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(usr)] detonated themselves at [ADMIN_VERBOSEJMP(T)]!</span>")
+	log_game("\<span class='notice'>[key_name(usr)] detonated themselves!</span>")
+	if(connected_ai)
+		to_chat(connected_ai, "<br><br><span class='alert'>ALERT - Cyborg detonation detected: [usr]</span><br>")
+	self_destruct()
