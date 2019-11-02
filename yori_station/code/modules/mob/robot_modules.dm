@@ -98,7 +98,7 @@
 
 /obj/item/robot_module/security/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Default - Treads", "Heavy", "Sleek", "Can", "Marina", "Spider", "Securitron", "Standard", "Noble-H", "Noble")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Default - Treads", "Heavy", "Sleek", "Can", "Marina", "Spider", "Securitron", "Standard", "Noble-H", "Noble", "Eyebot")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -135,6 +135,9 @@
 		if("Noble")
 			cyborg_base_icon = "Noble-SEC"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+		if("Eyebot")
+			cyborg_base_icon = "eyebotsec"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 	return ..()
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
