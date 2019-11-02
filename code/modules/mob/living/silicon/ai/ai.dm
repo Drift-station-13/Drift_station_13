@@ -197,7 +197,7 @@
 		iconstates[option] = image(icon = src.icon, icon_state = resolve_ai_icon(option))
 
 	view_core()
-	var/ai_core_icon = show_radial_menu(src, src , iconstates, radius = 42)
+	var/ai_core_icon = input("Please, select a display!", "AI", null) in iconstates
 
 	if(!ai_core_icon || incapacitated())
 		return
