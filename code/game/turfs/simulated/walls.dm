@@ -205,6 +205,10 @@
 	else if(istype(W, /obj/item/poster))
 		place_poster(W,user)
 		return TRUE
+//Borg Poster STuff
+	else if(istype(W, /obj/item/wantedposterposter))
+		place_borg_poster(W, user)
+
 	//wall mounted IC assembly stuff
 	else if(istype(W, /obj/item/electronic_assembly/wallmount))
 		var/obj/item/electronic_assembly/wallmount/A = W
