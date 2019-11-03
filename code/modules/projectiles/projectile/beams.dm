@@ -120,12 +120,6 @@
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return //don't want the emitters to miss
 
-/obj/item/projectile/beam/emitter/on_hit(atom/target, blocked = FALSE)
-	var/turf/T = get_turf(target)
-	if(ismineralturf(T) && prob(50))
-		var/turf/closed/mineral/M = T
-		M.gets_drilled()
-
 /obj/item/projectile/beam/lasertag
 	name = "laser tag beam"
 	icon_state = "omnilaser"
