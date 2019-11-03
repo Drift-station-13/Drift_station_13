@@ -143,6 +143,8 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "screw_borg"
 	item_state = "screwdriver"
+	hitsound = 'sound/items/drill_hit.ogg'
+	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.5
 	random_color = FALSE
 

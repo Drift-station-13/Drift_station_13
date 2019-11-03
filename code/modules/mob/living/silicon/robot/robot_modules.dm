@@ -251,6 +251,7 @@
 		/obj/item/stack/tile/plasteel/cyborg,
 		/obj/item/extinguisher,
 		/obj/item/pickaxe,
+		/obj/item/lightreplacer/cyborg,
 		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
