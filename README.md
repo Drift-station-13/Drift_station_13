@@ -30,7 +30,8 @@ I hope this is not seen as an attack on Citadel or its player base we have no il
 ## Credits
 Ideas & code:<br>
 
-Drift Station 13 contains code taken from Citadel-Station-13 & ShadowStation<BR>
+Drift Station 13 contains code & assets taken from Citadel-Station-13, Oracle Station, Yogstation, TauCetiStation, Paradise, VG Station, & ShadowStation<BR>
 Drift Station 13, like a lot of servers, can be traced back and is based on/tg/station.
 
-Please do note that: "Yori station" was the name of this codebase before it was given an official name.
+Please do note that: "Yori station" was the name of this codebase before it was given an official name.<br>
+DS13 is also refering to Drift Station 13.
