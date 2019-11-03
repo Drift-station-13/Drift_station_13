@@ -15,7 +15,7 @@
 /mob/living/silicon/ai
 	name = "AI"
 	icon = 'icons/mob/ai.dmi'
-	icon_state = "ai-drift"
+	icon_state = "ai"
 	anchored = TRUE
 	density = TRUE
 	canmove = FALSE
@@ -189,14 +189,10 @@
 	set name = "Set AI Core Display"
 	if(incapacitated())
 		return
-	var/list/iconstates = GLOB.ai_core_display_screens
-	for(var/option in iconstates)
-		if(option == "Random")
-			iconstates[option] = image(icon = src.icon, icon_state = "ai-random")
-			continue
-		iconstates[option] = image(icon = src.icon, icon_state = resolve_ai_icon(option))
 
 	view_core()
+
+	var/list/iconstates = GLOB.ai_core_display_screens
 	var/ai_core_icon = input("Please, select a display!", "AI", null) in iconstates
 
 	if(!ai_core_icon || incapacitated())

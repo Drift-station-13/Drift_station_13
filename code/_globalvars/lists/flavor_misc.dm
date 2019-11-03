@@ -41,6 +41,7 @@ GLOBAL_LIST_INIT(ghost_forms_with_directions_list, list("ghost")) //stores the g
 GLOBAL_LIST_INIT(ghost_forms_with_accessories_list, list("ghost")) //stores the ghost forms that support hair and other such things
 
 GLOBAL_LIST_INIT(ai_core_display_screens, list(
+	"Drift",
 	":thinking:",
 	"Alien",
 	"Angel",
@@ -67,7 +68,6 @@ GLOBAL_LIST_INIT(ai_core_display_screens, list(
 	"Nanotrasen",
 	"Not Malf",
 	"President",
-	"Random",
 	"Rainbow",
 	"Red",
 	"Red October",
@@ -84,8 +84,6 @@ GLOBAL_LIST_INIT(ai_core_display_screens, list(
 	if(!input || !(input in GLOB.ai_core_display_screens))
 		return "ai"
 	else
-		if(input == "Random")
-			input = pick(GLOB.ai_core_display_screens - "Random")
 		return "ai-[lowertext(input)]"
 
 GLOBAL_LIST_INIT(security_depts_prefs, list(SEC_DEPT_RANDOM, SEC_DEPT_NONE, SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))

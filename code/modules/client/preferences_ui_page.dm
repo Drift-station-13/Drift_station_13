@@ -87,20 +87,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list("mcolor" = "FFF",
 		"tail_lizard" = "Smooth",
-		"tail_human" = "None",
 		"mcolor2" = "FFF",
 		"mcolor3" = "FFF",
-		"taur" = "None",
 
-		"exhibitionist" = FALSE,
-		"has_cock" = FALSE,
-		"has_sheath" = FALSE,
-		"has_balls" = FALSE,
-		"has_ovi" = FALSE,
-		"has_eggsack" = FALSE,
-		"has_breasts" = FALSE,
-		"has_vag" = FALSE,
-		"has_womb" = FALSE,
 
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
@@ -108,7 +97,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		)
 
 	var/list/custom_names = list()
-	var/preferred_ai_core_display = "Blue"
+	var/preferred_ai_core_display = "Drift"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/custom_species = null
 
