@@ -1,7 +1,7 @@
 
 ## Drift Station 13 <BR>
 
-Welcome to Drift Station, currently this code base is not ready for prime time, but hopefuly we will have players playing soon.
+Welcome to Drift Station, currently this codebase is not ready for prime time, but hopefully we will have players playing soon.
 
 ## LICENSE
 
@@ -23,10 +23,14 @@ See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools
 
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](http://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
 
+## Drift station's policy on mature content.
+Drift Station 13 derives its initial codebase from Citadel, the reason for this is because when choosing a TG base, it was the closest in the functionality we wanted. But Drift Station 13 does not approve of sexual content so it is not accessible during gameplay & will be eventually completely removed from the code. ERP is not a part of the Drift Station 13 community vision.
+
+I hope this is not seen as an attack on Citadel or its player base we have no ill will towards them, but we are trying to create a different type of community.
 ## Credits
 Ideas & code:<br>
 
 Drift Station 13 contains code taken from Citadel-Station-13 & ShadowStation<BR>
-Drift Station 13 like a lot of servers can be traced back and is based from /tg/station.
+Drift Station 13, like a lot of servers, can be traced back and is based on/tg/station.
 
-Please do note that: "Yori station" was the name of this code base before it was given an offical name.
+Please do note that: "Yori station" was the name of this codebase before it was given an official name.
