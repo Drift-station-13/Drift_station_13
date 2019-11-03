@@ -255,6 +255,7 @@
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
 		/obj/item/borg/charger,
+		/obj/item/wantedposterposter,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/transforming/energy/sword/cyborg)
 	ratvar_modules = list(
@@ -346,6 +347,7 @@
 		/obj/item/gun/energy/disabler/cyborg,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew,
+		/obj/item/holosign_creator/cyborg,
 		/obj/item/borg/charger,
 		/obj/item/wantedposterposter)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
@@ -483,7 +485,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/hand_labeler/borg,
 		/obj/item/razor,
-		/obj/item/instrument/violin,
+		/obj/item/instrument/piano_synth,
 		/obj/item/instrument/guitar,
 		/obj/item/rsf/cyborg,
 		/obj/item/reagent_containers/dropper,
