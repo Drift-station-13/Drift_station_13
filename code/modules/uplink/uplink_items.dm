@@ -500,7 +500,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		 Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
 		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
-	cost = 8
+	cost = 5
+
+/datum/uplink_item/dangerous/prototype_energy_gun
+	name = "Prototype Energy Gun"
+	desc = "A old prototype energy gun stolen from NT ages ago, generally not that good but due to its basic components its easy to teleport."
+	item = /obj/item/gun/energy/e_gun/old
+	cost = 3
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
@@ -667,7 +673,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	name = "Slipocalypse Clusterbang"
 	desc = "A traditional clusterbang grenade with a payload consisting entirely of Syndicate soap. Useful in any scenario!"
 	item = /obj/item/grenade/clusterbuster/soap
-	cost = 6
+	cost = 3
 
 // Ammunition
 /datum/uplink_item/ammo
@@ -957,7 +963,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	name = "Bag of C-4 explosives"
 	desc = "Because sometimes quantity is quality. Contains 10 C-4 plastic explosives."
 	item = /obj/item/storage/backpack/duffelbag/syndie/c4
-	cost = 9 //10% discount!
+	cost = 8 //20% discount!
 	cant_discount = TRUE
 
 /datum/uplink_item/explosives/x4bag
@@ -1171,7 +1177,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "Projects an image across a user, disguising them as an object scanned with it, as long as they don't \
 			move the projector from their hand. Disguised users move slowly, and projectiles pass over them."
 	item = /obj/item/chameleon
-	cost = 7
+	cost = 6
 
 /datum/uplink_item/stealthy_tools/codespeak_manual
 	name = "Codespeak Manual"
@@ -1348,7 +1354,14 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 /datum/uplink_item/device_tools
 	category = "Devices and Tools"
 
-/datum/uplink_item/device_tools/emag
+/datum/uplink_item/device_tools/syndrone
+	name = "Syndrone Shell"
+	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Let it be noted that the drone is not programmed to help you and will go sabatoge on its own. Can be refunded if it does not power up"
+	item = /obj/item/drone_shell/syndrone
+	refundable = TRUE
+	cost = 5
+
+datum/uplink_item/device_tools/emag
 	name = "Cryptographic Sequencer"
 	desc = "The cryptographic sequencer, electromagnetic card, or emag, is a small card that unlocks hidden functions \
 			in electronic devices, subverts intended functions, and easily breaks security mechanisms."
@@ -1468,7 +1481,19 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "When used with an upload console, this module allows you to upload priority laws to an artificial intelligence. \
 			Be careful with wording, as artificial intelligences may look for loopholes to exploit."
 	item = /obj/item/aiModule/syndicate
-	cost = 9
+	cost = 2
+
+/datum/uplink_item/device_tools/ai_console_board
+	name = "AI Upload Console Board"
+	desc = "A computer board used to make a AI upload console, works well with a Hacked AI Law Upload Module."
+	item = /obj/item/circuitboard/computer/aiupload
+	cost = 6
+
+/datum/uplink_item/device_tools/borg_console_board
+	name = "Borg Upload Console Board"
+	desc = "A computer board used to make a Borg upload console, works well with a Hacked AI Law Upload Module."
+	item = /obj/item/circuitboard/computer/borgupload
+	cost = 3
 
 /datum/uplink_item/device_tools/medgun
 	name = "Medbeam Gun"
@@ -1491,7 +1516,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			in containment. Because of its size, it cannot be carried. Ordering this \
 			sends you a small beacon that will teleport the larger beacon to your location upon activation."
 	item = /obj/item/sbeacondrop
-	cost = 14
+	cost = 8
 
 /datum/uplink_item/device_tools/powersink
 	name = "Power Sink"
@@ -1499,7 +1524,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			load on the grid, causing a station-wide blackout. The sink is large and cannot be stored in most \
 			traditional bags and boxes. Caution: Will explode if the powernet contains sufficient amounts of energy."
 	item = /obj/item/powersink
-	cost = 6
+	cost = 10
 
 /datum/uplink_item/device_tools/rad_laser
 	name = "Radioactive Microlaser"
@@ -1704,7 +1729,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			blast wave \"projectile\". Aspiring scientists may find this highly useful, as forcing the pressure shockwave into a narrow angle seems to be able to bypass whatever quirk of physics \
 			disallows explosive ranges above a certain distance, allowing for the device to use the theoretical yield of a transfer valve bomb, instead of the factual yield."
 	item = /obj/item/gun/blastcannon
-	cost = 8							//High cost because of the potential for extreme damage in the hands of a skilled gas masked scientist.
+	cost = 10							//High cost because of the potential for extreme damage in the hands of a skilled gas masked scientist.
 	restricted_roles = list("Research Director", "Scientist", "Roboticist")
 
 /datum/uplink_item/role_restricted/alientech
@@ -1743,7 +1768,6 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	restricted_roles = list("Clown")
 
 
-/*
 /datum/uplink_item/role_restricted/clowncar
 	name = "Clown Car"
 	desc = "The Clown Car is the ultimate transportation method for any worthy clown! \
@@ -1752,9 +1776,8 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			someone saves them or they manage to crawl out. Be sure not to ram into any walls or vending machines, as the springloaded seats \
 			are very sensetive. Now with our included lube defense mechanism which will protect you against any angry shitcurity!"
 	item = /obj/vehicle/sealed/car/clowncar
-	cost = 15
+	cost = 10
 	restricted_roles = list("Clown")
-*/
 
 /datum/uplink_item/role_restricted/clumsyDNA
 	name = "Clumsy Clown DNA"

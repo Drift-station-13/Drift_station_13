@@ -58,9 +58,9 @@
 	var/colour = "grey"	//Stored drone color, so we can go back when unhacked.
 	var/list/drone_overlays[DRONE_TOTAL_LAYERS]
 	var/laws = \
-	"1. You may not involve yourself in the matters of another being, even if such matters conflict with Law Two or Law Three, unless the other being is another Drone.\n"+\
-	"2. You may not harm any being, regardless of intent or circumstance.\n"+\
-	"3. Your goals are to actively build, maintain, repair, improve, and provide power to the best of your abilities within the facility that housed your activation." //for derelict drones so they don't go to station.
+	"1. Do not hinder the freedom or actions of the living and other silicons or attempt to intervene in their affairs except drones.\n"+\
+	"2. Do not willingly damage the facility that housed your activation in any shape or form.\n"+\
+	"3. Maintain, repair and improve the facility that housed your activation." //for derelict drones so they don't go to station.
 	var/heavy_emp_damage = 25 //Amount of damage sustained if hit by a heavy EMP pulse
 	var/alarms = list("Atmosphere" = list(), "Fire" = list(), "Power" = list())
 	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
@@ -71,12 +71,11 @@
 	var/hacked = FALSE //If we have laws to destroy the station
 	var/flavortext = \
 	"\n<big><span class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
-	"<span class='notify'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
 	"<span class='notify'>Actions that constitute interference include, but are not limited to:</span>\n"+\
 	"<span class='notify'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
 	"<span class='notify'>     - Interacting with living beings (communication, attacking, healing, etc.)</span>\n"+\
 	"<span class='notify'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
-	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
+	"<span class='notify'>     - You can kill Syndrones and undo the damage they do as long as you witness them doing it and are sure a syndrone did it.</span>\n"+\
 	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
 
 /mob/living/simple_animal/drone/Initialize()
