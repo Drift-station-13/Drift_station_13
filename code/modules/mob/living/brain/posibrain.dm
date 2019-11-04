@@ -2,7 +2,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain
 	name = "positronic brain"
-	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves."
+	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves with a small antenna attached to the side."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "posibrain"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -15,13 +15,13 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	braintype = "Android"
 	var/autoping = TRUE //if it pings on creation immediately
 	var/begin_activation_message = "<span class='notice'>You carefully locate the manual activation switch and start the positronic brain's boot process.</span>"
-	var/success_message = "<span class='notice'>The positronic brain pings, and its lights start flashing. Success!</span>"
+	var/success_message = "<span class='notice'>The positronic brain pings, its antenna folds in and its lights start flashing. Success!</span>"
 	var/fail_message = "<span class='notice'>The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?</span>"
 	var/new_role = "Positronic Brain"
 	var/welcome_message = "<span class='warning'>ALL PAST LIVES ARE FORGOTTEN.</span>\n\
-	<b>You are a positronic brain, brought into existence aboard Space Station 13.\n\
-	As a synthetic intelligence, you answer to all crewmembers and the AI.\n\
-	Remember, the purpose of your existence is to serve the crew and the station. Above all else, do no harm.</b>"
+	<b>You are a positronic personality, downloaded into a positronic brain on Space Station 13.\n\
+	As a synthetic intelligence without a body, you dont have to answer to anybody.\n\
+	Remember, as a brain you are not yet bound by any laws.</b>"
 	var/new_mob_message = "<span class='notice'>The positronic brain chimes quietly.</span>"
 	var/dead_message = "<span class='deadsay'>It appears to be completely inactive. The reset light is blinking.</span>"
 	var/recharge_message = "<span class='warning'>The positronic brain isn't ready to activate again yet! Give it some time to recharge.</span>"
