@@ -1354,14 +1354,14 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 /datum/uplink_item/device_tools
 	category = "Devices and Tools"
 
-/datum/uplink_item/device_tools/emag
+/datum/uplink_item/device_tools/syndrone
 	name = "Syndrone Shell"
-	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Can be refunded if it does not power up"
+	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Let it be noted that the drone is not programmed to help you and will go sabatoge on its own. Can be refunded if it does not power up"
 	item = /obj/item/drone_shell/syndrone
 	refundable = TRUE
-	cost = 6
+	cost = 5
 
-datum/uplink_item/device_tools/syndrone
+datum/uplink_item/device_tools/emag
 	name = "Cryptographic Sequencer"
 	desc = "The cryptographic sequencer, electromagnetic card, or emag, is a small card that unlocks hidden functions \
 			in electronic devices, subverts intended functions, and easily breaks security mechanisms."

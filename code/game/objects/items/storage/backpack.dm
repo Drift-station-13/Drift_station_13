@@ -411,6 +411,22 @@
 	new /obj/item/multitool(src)
 	new /obj/item/pipe_dispenser(src)
 
+/obj/item/storage/backpack/duffelbag/syndrone
+	name = "suspicous looking drone duffel bag"
+	desc = "A large duffel bag for holding tools and hats."
+	icon_state = "duffel-syndie"
+	item_state = "duffel-drone"
+	resistance_flags = FIRE_PROOF
+
+/obj/item/storage/backpack/duffelbag/syndrone/PopulateContents()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/card/emag(src)
+	new /obj/item/radio(src)
+	new /obj/item/stack/cable_coil/random(src)
+	new /obj/item/multitool(src)
+
 /obj/item/storage/backpack/duffelbag/clown
 	name = "clown's duffel bag"
 	desc = "A large duffel bag for holding lots of funny gags!"

@@ -15,22 +15,21 @@
 	icon_state = "drone_synd"
 	icon_living = "drone_synd"
 	picked = TRUE //the appearence of syndrones is static, you don't get to change it.
-	health = 55
-	maxHealth = 150 //If you murder other drones and cannibalize them you can get much stronger
+	health = 35
+	maxHealth = 80 //If you murder other drones and cannibalize them you can get much stronger
 	initial_language_holder = /datum/language_holder/drone/syndicate
 	faction = list(ROLE_SYNDICATE)
 	speak_emote = list("chirps")
 	bubble_icon = "syndibot"
-	heavy_emp_damage = 25
+	heavy_emp_damage = 15
 	laws = \
-	"1. Do not harm suspected Syndicate agents.\n"+\
+	"1. Do not harm or assist suspected or confirmed Syndicate agents except other Syndrones you can assist other Syndrones.\n"+\
 	"2. Do not reveal the presence of syndicate activities unless the station is already informed\n"+\
-	"3. preserve your own existence and sabatoge NT in small ways as long as it dosent interfere with the first or second law."
-	default_storage = /obj/item/storage/backpack/duffelbag/drone
+	"3. preserve your own existence and sabatoge NT infrastructure in small ways and attempt to kill staff as long as it dosent interfere with the first or second law."
+	default_storage = /obj/item/storage/backpack/duffelbag/syndrone
 	default_hatmask = null
 	hacked = TRUE
-	flavortext = null
-
+	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging non vital devices such as hacking doors shut or disassembling some consoles maybe even removing all the lights in areas, you are allowed to kill high ranking people as long as you think you can do it without getting caught"
 /mob/living/simple_animal/drone/syndrone/Initialize()
 	. = ..()
 	GET_COMPONENT_FROM(hidden_uplink, /datum/component/uplink, internal_storage)
