@@ -502,6 +502,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/melee/powerfist
 	cost = 8
 
+/datum/uplink_item/dangerous/prototype_energy_gun
+	name = "Prototype Energy Gun"
+	desc = "A old prototype energy gun stolen from NT ages ago, generally not that good but due to its basic components its easy to teleport."
+	item = /obj/item/gun/energy/e_gun/old
+	cost = 3
+
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
 	desc = "Ranged fury, Syndicate style. Guaranteed to cause shock and awe or your TC back!"
@@ -1468,7 +1474,19 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	desc = "When used with an upload console, this module allows you to upload priority laws to an artificial intelligence. \
 			Be careful with wording, as artificial intelligences may look for loopholes to exploit."
 	item = /obj/item/aiModule/syndicate
-	cost = 9
+	cost = 2
+
+/datum/uplink_item/device_tools/ai_console_board
+	name = "AI Upload Console Board"
+	desc = "A computer board used to make a AI upload console, works well with a Hacked AI Law Upload Module."
+	item = /obj/item/circuitboard/computer/aiupload
+	cost = 6
+
+/datum/uplink_item/device_tools/borg_console_board
+	name = "Borg Upload Console Board"
+	desc = "A computer board used to make a Borg upload console, works well with a Hacked AI Law Upload Module."
+	item = /obj/item/circuitboard/computer/borgupload
+	cost = 3
 
 /datum/uplink_item/device_tools/medgun
 	name = "Medbeam Gun"
@@ -1743,7 +1761,6 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 	restricted_roles = list("Clown")
 
 
-/*
 /datum/uplink_item/role_restricted/clowncar
 	name = "Clown Car"
 	desc = "The Clown Car is the ultimate transportation method for any worthy clown! \
@@ -1752,9 +1769,8 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 			someone saves them or they manage to crawl out. Be sure not to ram into any walls or vending machines, as the springloaded seats \
 			are very sensetive. Now with our included lube defense mechanism which will protect you against any angry shitcurity!"
 	item = /obj/vehicle/sealed/car/clowncar
-	cost = 15
+	cost = 10
 	restricted_roles = list("Clown")
-*/
 
 /datum/uplink_item/role_restricted/clumsyDNA
 	name = "Clumsy Clown DNA"
