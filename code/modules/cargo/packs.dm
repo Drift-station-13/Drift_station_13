@@ -811,10 +811,20 @@
 	crate_name = "atmospherics hardsuit"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/engineering/uploadboards
+	name = "Replacement Upload Boards"
+	desc = "Comes with one set of borg and AI upload computer boards. Ask the CE to open."
+	cost = 6000
+	access = ACCESS_CE
+	contains = list(/obj/item/circuitboard/computer/aiupload,
+					/obj/item/circuitboard/computer/borgupload)
+	crate_name = "Upload Boards"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
 /datum/supply_pack/engineering/industrialrcd
 	name = "Industrial RCD"
 	desc = "A industrial RCD in case the station has gone through more then one meteor storm and the CE needs to bring out the somthing a bit more reliable. Dose not contain spare ammo for the industrial RCD or any other RCD modles."
-	cost = 4500
+	cost = 5500
 	access = ACCESS_CE
 	contains = list(/obj/item/construction/rcd/industrial)
 	crate_name = "industrial rcd"
