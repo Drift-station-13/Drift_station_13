@@ -30,10 +30,14 @@
 	default_hatmask = null
 	hacked = TRUE
 	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging non vital devices such as hacking doors shut or disassembling some consoles maybe even removing all the lights in areas, you are allowed to kill high ranking people as long as you think you can do it without getting caught"
+
 /mob/living/simple_animal/drone/syndrone/Initialize()
 	. = ..()
+	qdel(access_card) //we don't have free access
+	access_card = null
 	GET_COMPONENT_FROM(hidden_uplink, /datum/component/uplink, internal_storage)
 	hidden_uplink.telecrystals = 15
+
 
 /mob/living/simple_animal/drone/syndrone/Login()
 	..()
