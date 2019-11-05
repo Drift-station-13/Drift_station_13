@@ -25,11 +25,11 @@
 	laws = \
 	"1. Do not harm or assist suspected or confirmed Syndicate agents except other Syndrones you can assist other Syndrones.\n"+\
 	"2. Do not reveal the presence of syndicate activities unless the station is already informed\n"+\
-	"3. preserve your own existence and sabatoge NT infrastructure in small ways and attempt to kill staff as long as it dosent interfere with the first or second law."
+	"3. preserve your own existence and sabatoge NT infrastructure and attempt to kill staff as long as it dosent interfere with the first or second law."
 	default_storage = /obj/item/storage/backpack/duffelbag/syndrone
 	default_hatmask = null
 	hacked = TRUE
-	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging non vital devices such as hacking doors shut or disassembling some consoles maybe even removing all the lights in areas, you are allowed to kill high ranking people as long as you think you can do it without getting caught"
+	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging devices such as cutting APC wires or disassembling some consoles maybe even removing all the lights in areas just dont go too crazy and dont be too big of a dick when it comes to sabatoging, you are allowed to kill high ranking people as long as you think you can do it without getting caught"
 
 /mob/living/simple_animal/drone/syndrone/Initialize()
 	. = ..()
