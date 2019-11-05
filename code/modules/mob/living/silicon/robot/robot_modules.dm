@@ -350,6 +350,7 @@
 		/obj/item/pinpointer/crew,
 		/obj/item/holosign_creator/cyborg,
 		/obj/item/borg/charger,
+		/obj/item/evidencebag ,
 		/obj/item/wantedposterposter)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
