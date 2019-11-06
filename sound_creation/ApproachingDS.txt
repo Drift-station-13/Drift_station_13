@@ -1,0 +1,5 @@
+TTS RoboSoft Three
+Low-Pass Filter: 1500 Hz, 24dB
+Delay: Delay level per echo -6.00, Delay time 0.009, Num of echoes 30
+(add new track) make it Noise, Type Brownian, Amplitude 0.05
+Distortion (tts track) Hard Overdrive
