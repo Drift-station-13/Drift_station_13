@@ -1,0 +1,26 @@
+ ### things that need to be done to launch ###
+[ ] change space backdrop
+[ ] zoomout animations
+[ ] Cyborg overhull - component system
+[ ] radio show host
+[ ] new walls
+[ ] new titel artwork
+[ ] trailer
+[ ] infiltrator gamemode
+[ ] website
+  - [ ] domain name
+  - [ ] wiki thing
+[ ] charecter creator overhaull
+[ ] cyborg icon preview
+[ ] starter info tab
+[ ] database stuff
+[ ] port shift end anncoucemnt from yogstation to replace auto shuttel call
+[ ] basic drift
+
+### things add eventualy ###
+[ ] clock cult redo
+[ ] terminator game mode
+[ ] matrix gamemode
+[ ] mineing overhull
+[ ] HEV suite stuff
+[ ] Black orbit

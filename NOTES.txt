@@ -1,26 +1,15 @@
 ===== [YORI's NOTES] ======
 Current todo:
 
-Port Donut - from older tg code
-
-Remove Holo PDAs & 
-Change AI display ui
-Remove furry & ERP items
+fix jukebox | jukebox.dm, boombox.dm & dance_machine.dm
 
 Start removing tgui
 convert ui to use datum/browser or (custom thing)
 
 checkout holidays.dm
 
-https://github.com/Citadel-Station-13/Citadel-Station-13/blob/e0a29ec001fd8d80b88c2b6af7e5f53bcab4a00c/code/modules/client/preferences_savefile.dm
-
 REMOVE ERP FROM MOD_CIT/code/modules/client/pref*
 Look into  features["mcolor2"] & 3
-
-Look into what the save file updater does and strip it down
-Also implment our own save file version managment
-
-TG IMPLMENTED SMART CABLES in https://github.com/tgstation/tgstation/commit/65e9888fa60a22dfba6007878664c9607b8f7f4f
 
 ERP SHIT in MOD_CIT/code/modules/mob/living/carbon/human/species_type/jellypeople.dm
 
