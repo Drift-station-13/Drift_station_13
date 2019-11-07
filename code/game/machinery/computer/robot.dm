@@ -24,14 +24,13 @@
 
 /obj/machinery/computer/robotics/ui_interact(mob/user)
 	. = ..()
-	if (src.z > 6)
-		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
-		return
 	user.set_machine(src)
 	var/dat
 	var/robots = 0
 	for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)
 		if(!can_control(user, R))
+			continue
+		if(z != (get_turf(R)).z)
 			continue
 		robots++
 		dat += "[R.name] |"
@@ -73,6 +72,8 @@
 	var/drones = 0
 	for(var/mob/living/simple_animal/drone/D in GLOB.drones_list)
 		if(D.hacked)
+			continue
+		if(z != (get_turf(D)).z)
 			continue
 		drones++
 		dat += "[D.name] |"

@@ -245,8 +245,10 @@
 	return 1
 
 /obj/item/multitool/cyborg
-	name = "multitool"
-	desc = "Optimised and stripped-down version of a regular multitool."
+	name = "integrated multitool"
+	desc = "Optimised version of a regular multitool. Streamlines processes handled by its internal Systems."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "multi_borg"
 	toolspeed = 0.5
 
 /obj/item/multitool/abductor

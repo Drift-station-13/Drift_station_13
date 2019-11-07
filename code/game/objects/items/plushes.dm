@@ -585,11 +585,27 @@
 	item_state = "dr_scanny"
 	attack_verb = list("scanned", "beeped", "stared")
 
-/obj/item/toy/plush/borgplushie
+/obj/item/toy/plush/Pal
 	name = "Pal plushie"
-	desc = "An adorable stuffed toy of a robot."
+	desc = "An adorable stuffed toy of a cyborg."
 	icon_state = "plushie_pal"
 	item_state = "plushie_pal"
+	attack_verb = list("beeped", "booped", "pinged")
+	squeak_override = list('sound/machines/beep.ogg' = 1)
+
+/obj/item/toy/plush/AI
+	name = "AI plushie"
+	desc = "a adorable stuffed toy of a AI."
+	icon_state = "plushie_ai"
+	item_state = "plushie_ai"
+	attack_verb = list("beeped", "booped", "pinged")
+	squeak_override = list('sound/machines/beep.ogg' = 1)
+
+/obj/item/toy/plush/borg
+	name = "cyborg plushie"
+	desc = "An adorable stuffed toy of a cyborg."
+	icon_state = "plushie_borg"
+	item_state = "plushie_borg"
 	attack_verb = list("beeped", "booped", "pinged")
 	squeak_override = list('sound/machines/beep.ogg' = 1)
 

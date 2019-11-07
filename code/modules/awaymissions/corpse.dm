@@ -39,6 +39,11 @@
 	if(jobban_isbanned(user, banType))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
+	if(isobserver(user)) //hippie start -- antag hud stuff
+		var/mob/dead/observer/O = user
+		if(O.antag_hud)
+			to_chat(user, "<span class='warning'>You cannot re-join the round!</span>")
+			return //hippie end
 	if(QDELETED(src) || QDELETED(user))
 		return
 	if(isobserver(user))
