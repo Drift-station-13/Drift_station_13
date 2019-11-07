@@ -148,3 +148,12 @@
 	materials = list(MAT_METAL = 150, MAT_GLASS = 150)
 	build_path = /obj/item/geiger_counter
 	category = list("initial", "Tools")
+
+/datum/design/mop
+	name = "Mop"
+	id = "mop"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 1000)
+	build_path = /obj/item/mop
+	category = list("initial","Tools","Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
