@@ -12,27 +12,11 @@ SUBSYSTEM_DEF(title)
 	if(file_path && icon)
 		return
 
-	if(fexists("data/previous_title.dat"))
-		var/previous_path = file2text("data/previous_title.dat")
-		if(istext(previous_path))
-			previous_icon = new(previous_icon)
-	fdel("data/previous_title.dat")
-
-	var/list/provisional_title_screens = flist("[global.config.directory]/title_screens/images/")
-	var/list/title_screens = list()
-	var/use_rare_screens = prob(1)
-
 	SSmapping.HACK_LoadMapConfig()
-	for(var/S in provisional_title_screens)
-		var/list/L = splittext(S,"+")
-		if((L.len == 1 && L[1] != "blank.png")|| (L.len > 1 && ((use_rare_screens && lowertext(L[1]) == "rare") || (lowertext(L[1]) == lowertext(SSmapping.config.map_name)))))
-			title_screens += S
 
-	if(length(title_screens))
-		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
-
-	//if(!file_path)
-	file_path = "icons/title1.dmi"
+	var/list/start_screen_file_list = flist("icons/title_screen/images/")
+	var/start_screen_pick = rand(1, start_screen_file_list.len)
+	file_path = "icons/title_screen/images/" + start_screen_file_list[start_screen_pick]
 
 	ASSERT(fexists(file_path))
 
@@ -52,10 +36,6 @@ SUBSYSTEM_DEF(title)
 					splash_turf.icon = icon
 
 /datum/controller/subsystem/title/Shutdown()
-	if(file_path)
-		var/F = file("data/previous_title.dat")
-		WRITE_FILE(F, file_path)
-
 	for(var/thing in GLOB.clients)
 		if(!thing)
 			continue

@@ -653,8 +653,12 @@
 	icon_state = "mood5"
 	screen_loc = ui_mood
 
+/*
+	Splash / title screen
+*/
+
 /obj/screen/splash
-	icon = 'icons/blank_title.png'
+	icon = 'icons/title_screen/blank_title.png'
 	icon_state = ""
 	screen_loc = "1,1"
 	layer = SPLASHSCREEN_LAYER
@@ -669,14 +673,14 @@
 	if(!visible)
 		alpha = 0
 
-	if(!use_previous_title)
+	//if(!use_previous_title)
 		if(SStitle.icon)
 			icon = SStitle.icon
-	else
-		if(!SStitle.previous_icon)
-			qdel(src)
-			return
-		icon = SStitle.previous_icon
+	//else
+	//	if(!SStitle.previous_icon)
+	//		qdel(src)
+	//		return
+	//	icon = SStitle.previous_icon
 
 	holder.screen += src
 
@@ -696,6 +700,12 @@
 		holder.screen -= src
 		holder = null
 	return ..()
+
+
+
+
+
+
 
 
 /obj/screen/component_button

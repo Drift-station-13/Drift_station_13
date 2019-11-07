@@ -1,0 +1,3 @@
+images should be 672 x 480
+png & dmi files are fine, if you want it animated then use dmi otherwise dont bother.
+template.png is the correct size.

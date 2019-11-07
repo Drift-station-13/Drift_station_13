@@ -62,7 +62,7 @@
 
 /turf/closed/indestructible/splashscreen
 	name = "Space Station 13"
-	icon = 'icons/blank_title.png'
+	icon = 'icons/title_screen/blank_title.png'
 	icon_state = ""
 	layer = FLY_LAYER
 	bullet_bounce_sound = null
