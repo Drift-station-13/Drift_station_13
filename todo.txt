@@ -8,7 +8,7 @@
 [ ] trailer
 [ ] infiltrator gamemode
 [ ] website
-  - [ ] domain name
+  - [X] domain name
   - [ ] wiki thing
 [ ] charecter creator overhaull
 [ ] cyborg icon preview
@@ -16,6 +16,7 @@
 [ ] database stuff
 [ ] port shift end anncoucemnt from yogstation to replace auto shuttel call
 [ ] basic drift
+[ ] terminal ambiant sounds
 
 ### things add eventualy ###
 [ ] clock cult redo

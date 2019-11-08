@@ -701,6 +701,23 @@
 	log_admin("[key_name(usr)] spawned [chosen] at [AREACOORD(usr)]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+
+/datum/admins/proc/spawn_human()
+	set category = "Debug"
+	set desc = "Spawns a debug human"
+	set name = "Spawn human"
+
+	if(!check_rights(R_SPAWN))
+		return
+
+	var/atom/A = new /mob/living/carbon/human(usr.loc)
+	A.flags_1 |= ADMIN_SPAWNED_1
+
+	log_admin("[key_name(usr)] spawned a human at [AREACOORD(usr)]")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Human") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+
+
 /datum/admins/proc/spawn_cargo(object as text)
 	set category = "Debug"
 	set desc = "(atom path) Spawn a cargo crate"
