@@ -705,7 +705,7 @@
 /datum/admins/proc/spawn_human()
 	set category = "Debug"
 	set desc = "Spawns a debug human"
-	set name = "Spawn human"
+	set name = "Spawn Human"
 
 	if(!check_rights(R_SPAWN))
 		return
