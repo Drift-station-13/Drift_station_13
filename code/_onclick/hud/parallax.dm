@@ -46,6 +46,7 @@
 /datum/hud/proc/remove_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
 	var/client/C = screenmob.client
+
 	C.screen -= (C.parallax_layers_cached)
 	var/obj/screen/plane_master/PM = screenmob.hud_used.plane_masters["[PLANE_SPACE]"]
 	if(screenmob != mymob)
@@ -57,6 +58,7 @@
 /datum/hud/proc/apply_parallax_pref(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
 	var/client/C = screenmob.client
+
 	if(C.prefs)
 		var/pref = C.prefs.parallax
 		if (isnull(pref))
@@ -167,7 +169,7 @@
 /datum/hud/proc/update_parallax()
 	var/client/C = mymob.client
 	var/turf/posobj = get_turf(C.eye)
-	if(!posobj) 
+	if(!posobj)
 		return
 	var/area/areaobj = posobj.loc
 
