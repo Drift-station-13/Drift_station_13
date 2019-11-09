@@ -286,10 +286,11 @@
 	icon_state = "viscerator_attack"
 	icon_living = "viscerator_attack"
 	pass_flags = PASSTABLE | PASSMOB
+	density = 0 //Projectiles will pass through them so they dont immmediatly die to nuke op friendly fire
 	a_intent = INTENT_HARM
 	mob_biotypes = list(MOB_ROBOTIC)
-	health = 25
-	maxHealth = 25
+	health = 5
+	maxHealth = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	obj_damage = 0
