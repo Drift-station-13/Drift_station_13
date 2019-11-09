@@ -350,13 +350,36 @@
 		/obj/item/pinpointer/crew,
 		/obj/item/holosign_creator/cyborg,
 		/obj/item/borg/charger,
-		/obj/item/evidencebag ,
 		/obj/item/wantedposterposter)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "sec"
 	moduleselect_icon = "security"
+	can_be_pushed = FALSE
+	hat_offset = 3
+
+/obj/item/robot_module/detective
+	name = "detective"
+	basic_modules = list(
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/melee/baton/loaded,
+		/obj/item/borg/charger,
+		/obj/item/evidencebag ,
+		/obj/item/evidencebag ,
+		/obj/item/evidencebag ,
+		/obj/item/reagent_containers/borghypo/borgshakerdet ,
+		/obj/item/rsf/cyborg,
+		/obj/item/pen,
+		/obj/item/lighter,
+		/obj/item/detective_scanner,
+		/obj/item/wantedposterposter)
+	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
+	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+		/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "det"
+	moduleselect_icon = "detective"
 	can_be_pushed = FALSE
 	hat_offset = 3
 

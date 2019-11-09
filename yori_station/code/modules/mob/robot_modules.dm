@@ -73,7 +73,7 @@
 
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Noir", "Dark Noir", "Omoikane", "Xenobot")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Omoikane", "Xenobot")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -82,12 +82,6 @@
 		if("Spider")
 			cyborg_base_icon = "whitespider"
 			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Noir")
-			cyborg_base_icon = "peaceborg-noir"
-			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
-		if("Dark Noir")
-			cyborg_base_icon = "peaceborg-noirbw"
-			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 		if("Omoikane")
 			cyborg_base_icon = "omoikane"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
@@ -138,6 +132,19 @@
 		if("Eyebot")
 			cyborg_base_icon = "eyebotsec"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+	return ..()
+
+obj/item/robot_module/detective/be_transformed_to(obj/item/robot_module/old_module)
+	var/mob/living/silicon/robot/R = loc
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Dark")
+	if(!borg_icon)
+		return FALSE
+	switch(borg_icon)
+		if("Default")
+			cyborg_base_icon = "det"
+		if("Dark")
+			cyborg_base_icon = "peaceborg-noirbw"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 	return ..()
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)

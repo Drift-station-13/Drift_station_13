@@ -231,6 +231,7 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Janitor" = /obj/item/robot_module/janitor, \
+	"Detective" = /obj/item/robot_module/detective, \
 	"Service" = /obj/item/robot_module/butler)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
@@ -832,6 +833,9 @@
 
 /mob/living/silicon/robot/modules/security
 	set_module = /obj/item/robot_module/security
+
+/mob/living/silicon/robot/modules/detective
+	set_module = /obj/item/robot_module/detective
 
 /mob/living/silicon/robot/modules/clown
 	set_module = /obj/item/robot_module/clown

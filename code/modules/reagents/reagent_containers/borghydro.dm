@@ -226,6 +226,62 @@ Borg Shaker
 	if(empty)
 		to_chat(usr, "<span class='warning'>It is currently empty! Please allow some time for the synthesizer to produce more.</span>")
 
+/obj/item/reagent_containers/borghypo/borgshakerdet
+	name = "detective cyborg shaker"
+	desc = "A very early prototype drink synthesizer repurposed for the detective module."
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "shaker"
+	possible_transfer_amounts = list(5,10,20)
+	charge_cost = 20 //Lots of reagents all regenerating at once, so the charge cost is lower. They also regenerate faster.
+	recharge_time = 3
+	accepts_reagent_upgrades = FALSE
+
+	reagent_ids = list("ice", "whiskey")
+
+/obj/item/reagent_containers/borghypo/borgshakerdet/attack(mob/M, mob/user)
+	return //Can't inject stuff with a shaker, can we? //not with that attitude
+
+/obj/item/reagent_containers/borghypo/borgshakerdet/regenerate_reagents()
+	if(iscyborg(src.loc))
+		var/mob/living/silicon/robot/R = src.loc
+		if(R && R.cell)
+			for(var/i in modes) //Lots of reagents in this one, so it's best to regenrate them all at once to keep it from being tedious.
+				var/valueofi = modes[i]
+				var/datum/reagents/RG = reagent_list[valueofi]
+				if(RG.total_volume < RG.maximum_volume)
+					R.cell.use(charge_cost)
+					RG.add_reagent(reagent_ids[valueofi], 5)
+
+/obj/item/reagent_containers/borghypo/borgshakerdet/afterattack(obj/target, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	else if(target.is_refillable())
+		var/datum/reagents/R = reagent_list[mode]
+		if(!R.total_volume)
+			to_chat(user, "<span class='warning'>[src] is currently out of this ingredient! Please allow some time for the synthesizer to produce more.</span>")
+			return
+
+		if(target.reagents.total_volume >= target.reagents.maximum_volume)
+			to_chat(user, "<span class='notice'>[target] is full.</span>")
+			return
+
+		var/trans = R.trans_to(target, amount_per_transfer_from_this)
+		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to [target].</span>")
+
+/obj/item/reagent_containers/borghypo/borgshakerdet/DescribeContents()
+	var/empty = 1
+
+	var/datum/reagents/RS = reagent_list[mode]
+	var/datum/reagent/R = locate() in RS.reagent_list
+	if(R)
+		to_chat(usr, "<span class='notice'>It currently has [R.volume] unit\s of [R.name] stored.</span>")
+		empty = 0
+
+	if(empty)
+		to_chat(usr, "<span class='warning'>It is currently empty! Please allow some time for the synthesizer to produce more.</span>")
+
 /obj/item/reagent_containers/borghypo/borgshaker/hacked
 	name = "cyborg shaker"
 	desc = "Will mix drinks that knock them dead."
