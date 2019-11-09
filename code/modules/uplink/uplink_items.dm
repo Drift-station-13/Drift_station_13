@@ -1356,7 +1356,7 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 
 /datum/uplink_item/device_tools/syndrone
 	name = "Syndrone Shell"
-	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Let it be noted that the drone is not programmed to help you and will go sabatoge on its own. Can be refunded if it does not power up"
+	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Let it be noted that the drone is not programmed to help you and is instead programmed to go sabatoge on its own it is set to ignore other agents that are not other Syndrones. Can be refunded if it does not power up"
 	item = /obj/item/drone_shell/syndrone
 	refundable = TRUE
 	cost = 5
@@ -1571,7 +1571,7 @@ datum/uplink_item/device_tools/emag
 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
 			as well as talk on an encrypted Syndicate channel with other agents that have the same key."
 	item = /obj/item/encryptionkey/syndicate
-	cost = 0
+	cost = 1
 	surplus = 75
 	restricted = TRUE
 
