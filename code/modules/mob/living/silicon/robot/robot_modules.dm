@@ -365,17 +365,17 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/loaded,
-		/obj/item/borg/charger,
-		/obj/item/evidencebag ,
 		/obj/item/evidencebag ,
 		/obj/item/evidencebag ,
 		/obj/item/reagent_containers/borghypo/borgshakerdet ,
 		/obj/item/rsf/cyborg,
 		/obj/item/pen,
+		/obj/item/extinguisher/mini,
 		/obj/item/lighter,
 		/obj/item/detective_scanner,
-		/obj/item/wantedposterposter)
-	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
+		/obj/item/wantedposterposter,
+		/obj/item/borg/charger)
+	emag_modules = list(/obj/item/chameleon)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "det"
