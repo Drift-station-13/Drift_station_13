@@ -136,7 +136,7 @@
 
 obj/item/robot_module/detective/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Dark")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Dark", "Classic", "Dark Classic")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -145,6 +145,12 @@ obj/item/robot_module/detective/be_transformed_to(obj/item/robot_module/old_modu
 		if("Dark")
 			cyborg_base_icon = "peaceborg-noirbw"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+		if("Classic")
+			cyborg_base_icon = "detective-old"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+		if("Dark Classic")
+			cyborg_base_icon = "detective-old-dark"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 	return ..()
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)

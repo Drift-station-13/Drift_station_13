@@ -366,7 +366,6 @@
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/loaded,
 		/obj/item/evidencebag ,
-		/obj/item/evidencebag ,
 		/obj/item/reagent_containers/borghypo/borgshakerdet ,
 		/obj/item/rsf/cyborg,
 		/obj/item/pen,
