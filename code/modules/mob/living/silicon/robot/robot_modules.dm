@@ -372,6 +372,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/lighter,
 		/obj/item/detective_scanner,
+		/obj/item/healthanalyzer,
 		/obj/item/wantedposterposter,
 		/obj/item/borg/charger)
 	emag_modules = list(/obj/item/chameleon)
