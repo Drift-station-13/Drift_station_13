@@ -50,40 +50,54 @@
 	PM.color = initial(PM.color)
 
 
+
+
+
 /datum/hud/proc/update_parallax()
 	var/client/C = mymob.client
 	var/turf/posobj = get_turf(C.eye)
 	if(!posobj)
 		return
 
-	warning("update_parallax was called!")
-	TODO MOVE THIS LOGIC, this only gets called a few times.
-	that or figure out how to do this on a movment event
-
 	var/diff_x = C.parallax_last_x - posobj.x
 	var/diff_y = C.parallax_last_y - posobj.y
 
 	for(var/obj/ys_screen/parallax_layer/L in C.parallax_layers)
-		/*
+
 		L.offset_x += diff_x
-		var/pos_rend_x = L.offset_x
 		L.offset_y += diff_y
-		var/pos_rend_y = L.offset_y
-		*/
-		L.offset_x += 1
-		L.offset_y += 1
-		if(L.offset_x > 500)
+
+		if(L.offset_x>0)
+			L.offset_x = L.img_overflow_x * -1
+		if(L.offset_x<(L.img_overflow_x * -1))
 			L.offset_x = 0
+
+		if(L.offset_y>0)
+			L.offset_y = L.img_overflow_y * -1
+		if(L.offset_y<(L.img_overflow_y * -1))
 			L.offset_y = 0
+
+
 		L.screen_loc = "CENTER-10:[L.offset_x],CENTER-7:[L.offset_y]"
 
 	C.parallax_last_x = posobj.x
 	C.parallax_last_y = posobj.y
-
-/atom/movable/proc/update_parallax_contents()
 	return
 
+
+
+
+
+//!TODO: look into simplfying this? (or figureing it out)
+/atom/movable/proc/update_parallax_contents()
+	if(length(client_mobs_in_contents))
+		for(var/thing in client_mobs_in_contents)
+			var/mob/M = thing
+			if(M && M.client && M.hud_used && length(M.client.parallax_layers))
+				M.hud_used.update_parallax()
+
 /atom/movable/proc/update_parallax_teleport()
+	warning("update_parallax_teleport was called!")
 	return
 
 /datum/hud/proc/update_parallax_pref(mob/viewmob)
@@ -102,7 +116,9 @@
 
 	var/offset_x = 0
 	var/offset_y = 0
+	var/img_overflow_x = 675
+	var/img_overflow_y = 480
 
 /obj/ys_screen/parallax_layer/layer_1
 	//icon_state = "debug"
-	icon = 'icons/Testing/background.png'
+	icon = 'yori_station/icons/parallax/nebula.png'
