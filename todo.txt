@@ -17,6 +17,7 @@
 [ ] port shift end anncoucemnt from yogstation to replace auto shuttel call
 [ ] basic drift
 [ ] terminal ambiant sounds
+[ ] port vampires from Citadel
 
 ### things add eventualy ###
 [ ] clock cult redo
