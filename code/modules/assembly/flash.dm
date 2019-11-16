@@ -199,6 +199,7 @@
 
 
 /obj/item/assembly/flash/cyborg
+	icon_state = "flash_borg"
 
 /obj/item/assembly/flash/cyborg/attack(mob/living/M, mob/user)
 	..()

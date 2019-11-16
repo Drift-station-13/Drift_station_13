@@ -753,7 +753,7 @@
 ***********************************************************************/
 
 /obj/item/weapon/gripper
-	name = "Circuit Gripper"
+	name = "circuit gripper"
 	desc = "A simple grasping tool for inserting circuitboards into machinary."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "gripper"
