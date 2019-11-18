@@ -1,6 +1,6 @@
 /obj/item/modular_computer/laptop
-	name = "laptop"
-	desc = "A portable laptop computer."
+	name = "portable terminal"
+	desc = "A portable computer."
 
 	icon = 'icons/obj/modular_laptop.dmi'
 	icon_state = "laptop-closed"
