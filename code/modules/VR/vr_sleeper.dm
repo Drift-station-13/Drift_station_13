@@ -6,7 +6,7 @@
 	name = "virtual reality sleeper"
 	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds."
 	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
+	icon_state = "sleeper_vr"
 	state_open = TRUE
 	occupant_typecache = list(/mob/living/carbon/human) // turned into typecache in Initialize
 	circuit = /obj/item/circuitboard/machine/vr_sleeper
