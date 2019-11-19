@@ -209,5 +209,7 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /_maps/**/backup/
 /_maps/templates.dm
 
-#ds-pal
-TOOLS/ds-pal/*.patch
+
+#DS Pal
+**.patch
+**.patch.mp
