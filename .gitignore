@@ -208,3 +208,6 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 #extra map stuff
 /_maps/**/backup/
 /_maps/templates.dm
+
+#ds-pal
+TOOLS/ds-pal/*.patch
