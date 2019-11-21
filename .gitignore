@@ -213,3 +213,10 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 #DS Pal
 **.patch
 **.patch.mp
+**.orig
+**.rej
+wiggle.exe
+gp.exe
+filterdiff.exe
+cygwin1.dll
+cygncursesw-10.dll
