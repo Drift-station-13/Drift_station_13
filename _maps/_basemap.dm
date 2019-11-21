@@ -14,6 +14,8 @@
 
 		#include "map_files\KiloStation\KiloStation.dmm"
 		#include "map_files\Donutstation\Donutstation.dmm"
+		
+		#include "map_files\DriftStation\driftstation.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
