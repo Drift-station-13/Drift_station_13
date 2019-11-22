@@ -7,7 +7,7 @@
 	icon_state_menu = "menu"
 	hardware_flag = PROGRAM_TABLET
 	max_hardware_size = 1
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	steel_sheet_cost = 1
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
 	has_light = TRUE //LED flashlight!
