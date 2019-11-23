@@ -4,16 +4,12 @@
 
 	var/atom/movable/movingmob
 
-	var/parallax_last_x = 0
-	var/parallax_last_y = 0
-
 /datum/hud/proc/create_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
 	var/client/C = screenmob.client
 
 	var/turf/posobj = get_turf(C.eye)
-	C.parallax_last_x = posobj.x
-	C.parallax_last_y = posobj.y
+	C.previous_turf = posobj
 
 	if(C.prefs.parallax == PARALLAX_DISABLE)
 		return
@@ -59,36 +55,44 @@
 	if(!posobj)
 		return
 
-	var/diff_x = C.parallax_last_x - posobj.x
-	var/diff_y = C.parallax_last_y - posobj.y
+	if(C.previous_turf == posobj)
+		return
+
+	var/diff_x = C.previous_turf.x - posobj.x
+	var/diff_y = C.previous_turf.y - posobj.y
 
 	for(var/obj/ys_screen/parallax_layer/L in C.parallax_layers)
 
-		L.offset_x += diff_x
-		L.offset_y += diff_y
+		L.offset_x += diff_x *-1
+		L.offset_y += diff_y *-1
+
 
 		if(L.offset_x>0)
-			L.offset_x = L.img_overflow_x * -1
+			to_chat(C, "X1 [L.offset_x] > 0")
+			L.offset_x = (L.img_overflow_x+1)
+
 		if(L.offset_x<(L.img_overflow_x * -1))
+			to_chat(C, "X2 [L.offset_x] < [(L.img_overflow_x * -1)]")
 			L.offset_x = 0
 
 		if(L.offset_y>0)
-			L.offset_y = L.img_overflow_y * -1
+			to_chat(C, "Y1 [L.offset_y] > 0")
+			L.offset_y = (L.img_overflow_y+1)
+
 		if(L.offset_y<(L.img_overflow_y * -1))
+			to_chat(C, "Y2 [L.offset_y] < [(L.img_overflow_y * -1)]")
 			L.offset_y = 0
 
 
+		to_chat(C, "[L.offset_x], [L.offset_y] :: [diff_x], [diff_y] ::: [L.offset_x], [L.offset_y]")
+
 		L.screen_loc = "CENTER-10:[L.offset_x],CENTER-7:[L.offset_y]"
 
-	C.parallax_last_x = posobj.x
-	C.parallax_last_y = posobj.y
+	C.previous_turf = posobj
+
 	return
 
 
-
-
-
-//!TODO: look into simplfying this? (or figureing it out)
 /atom/movable/proc/update_parallax_contents()
 	if(length(client_mobs_in_contents))
 		for(var/thing in client_mobs_in_contents)
