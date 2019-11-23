@@ -61,8 +61,8 @@
 	toolspeed = 0.5
 
 /obj/item/crowbar/cyborg
-	name = "hydraulic crowbar"
-	desc = "A hydraulic prying tool, compact but powerful. Designed to replace crowbar in construction cyborgs."
+	name = "low power jaws of life"
+	desc = "A hydraulic prying tool, compact but powerful. Designed to replace the crowbar in construction cyborgs."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "crowbar_borg"
 	item_state = "crowbar"
