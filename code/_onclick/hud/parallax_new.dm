@@ -63,28 +63,25 @@
 
 	for(var/obj/ys_screen/parallax_layer/L in C.parallax_layers)
 
-		L.offset_x += diff_x *-1
-		L.offset_y += diff_y *-1
+		L.offset_x += diff_x
+		//L.offset_y += diff_y
 
 
-		if(L.offset_x>0)
-			to_chat(C, "X1 [L.offset_x] > 0")
-			L.offset_x = (L.img_overflow_x+1)
-
-		if(L.offset_x<(L.img_overflow_x * -1))
-			to_chat(C, "X2 [L.offset_x] < [(L.img_overflow_x * -1)]")
+		if(L.offset_x<L.img_overflow_x)
+			to_chat(C, "X1 [L.offset_x] < [L.img_overflow_x]")
 			L.offset_x = 0
+		if(L.offset_x > 0)
+			to_chat(C, "X2 [L.offset_x] > 0")
+			L.offset_x = L.img_overflow_x
 
-		if(L.offset_y>0)
-			to_chat(C, "Y1 [L.offset_y] > 0")
-			L.offset_y = (L.img_overflow_y+1)
+		/*
+		if(L.offset_x<L.img_overflow_y)
+			L.offset_y = -1
+		if(L.offset_y > 0)
+			L.offset_y = L.img_overflow_y + 1
+		*/
 
-		if(L.offset_y<(L.img_overflow_y * -1))
-			to_chat(C, "Y2 [L.offset_y] < [(L.img_overflow_y * -1)]")
-			L.offset_y = 0
-
-
-		to_chat(C, "[L.offset_x], [L.offset_y] :: [diff_x], [diff_y] ::: [L.offset_x], [L.offset_y]")
+		to_chat(C, "[L.offset_x], [L.offset_y] :: [diff_x], [diff_y]")
 
 		L.screen_loc = "CENTER-10:[L.offset_x],CENTER-7:[L.offset_y]"
 
@@ -118,10 +115,10 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 255
 
-	var/offset_x = 0
-	var/offset_y = 0
-	var/img_overflow_x = 675
-	var/img_overflow_y = 480
+	var/offset_x = -1
+	var/offset_y = -1
+	var/img_overflow_x = -675
+	var/img_overflow_y = -480
 
 /obj/ys_screen/parallax_layer/layer_1
 	//icon_state = "debug"
