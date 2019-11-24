@@ -579,7 +579,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/mechanicalpinches
-	name = "Mechanical Pinches"
+	name = "Mechanical Retractor"
 	desc = "These pinches can be either used as retractor or hemostat."
 	id = "mechanicalpinches"
 	build_path = /obj/item/retractor/advanced
