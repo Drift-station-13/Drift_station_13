@@ -549,7 +549,7 @@ RLD
 
 /obj/item/construction/rcd/borg
 	no_ammo_message = "<span class='warning'>Insufficient charge.</span>"
-	desc = "A device used to rapidly build walls and floors."
+	desc = "A integrated device used to rapidly build walls and floors."
 	icon_state = "rcd_borg"
 	canRturf = TRUE
 	upgrade = TRUE
