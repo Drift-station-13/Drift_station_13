@@ -910,10 +910,10 @@
 
 /obj/item/borg/apparatus/circuit
 	name = "engineering gripper"
-	desc = "A special gripper for carrying and manipulating circuit boards, tanks and mechanical parts. Alt-Z or right-click to drop the stored object."
+	desc = "A special gripper for carrying and manipulating circuit boards, tanks, metal and glass sheets also mechanical parts. Alt-Z or right-click to drop the stored object."
 	icon_state = "gripper"
 	storable = list(/obj/item/circuitboard,
-				/obj/item/electronics, /obj/item/aiModule/, /obj/item/stock_parts/, /obj/item/stack/sheet/, /obj/item/tank/internals/)
+				/obj/item/electronics, /obj/item/aiModule/, /obj/item/stock_parts/, /obj/item/stack/sheet/glass/, /obj/item/stack/sheet/metal/, /obj/item/stack/sheet/rglass/, /obj/item/tank/internals/)
 
 /obj/item/borg/apparatus/circuit/Initialize()
 	. = ..()
