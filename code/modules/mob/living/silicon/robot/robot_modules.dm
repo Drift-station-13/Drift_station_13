@@ -269,10 +269,13 @@
 	name = "Medical"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
+		/obj/item/wrench/cyborg/medical,
+		/obj/item/borg/apparatus/beaker,
 		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/borghypo,
 		/obj/item/reagent_containers/glass/beaker/large,
 		/obj/item/reagent_containers/dropper,
+		/obj/item/storage/pill_bottle,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/surgical_drapes,
 		/obj/item/retractor,
@@ -315,7 +318,7 @@
 		/obj/item/analyzer,
 		/obj/item/storage/part_replacer/cyborg,
 		/obj/item/holosign_creator/atmos,
-		/obj/item/weapon/gripper,
+		/obj/item/borg/apparatus/circuit,
 		/obj/item/lightreplacer/cyborg,
 		/obj/item/geiger_counter/cyborg,
 		/obj/item/assembly/signaler/cyborg,
@@ -509,6 +512,7 @@
 		/obj/item/lighter,
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
+		/obj/item/borg/apparatus/beaker/service,
 		/obj/item/borg/lollipop)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,

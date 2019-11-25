@@ -1,6 +1,6 @@
 /obj/item/robot_module/medical/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Heavy", "Pod Bot", "Cyclone", "Sleek", "Droid", "Eyebot", "Standard", "Gibbs", "Noble-H", "Noble")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Heavy", "Pod Bot", "Sleek", "Droid", "Eyebot", "Standard", "Gibbs", "Noble-H", "Noble")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)

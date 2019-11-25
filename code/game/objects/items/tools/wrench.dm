@@ -30,6 +30,13 @@
 	icon_state = "wrench_borg"
 	toolspeed = 0.5
 
+/obj/item/wrench/cyborg/medical
+	name = "automatic medical wrench"
+	desc = "A advanced medical wrench with common(medical?) uses. Can be found in medical cyborgs."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "wrench_medical_borg"
+	toolspeed = 0.5
+
 /obj/item/wrench/brass
 	name = "brass wrench"
 	desc = "A brass wrench. It's faintly warm to the touch."
