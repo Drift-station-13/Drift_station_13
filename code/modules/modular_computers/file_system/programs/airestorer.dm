@@ -5,7 +5,6 @@
 	extended_desc = "This program is capable of reconstructing damaged AI systems. Requires direct AI connection via intellicard slot."
 	size = 12
 	requires_ntnet = 0
-	usage_flags = PROGRAM_CONSOLE
 	transfer_access = ACCESS_HEADS
 	available_on_ntnet = 1
 	tgui_id = "ntos_ai_restorer"
@@ -73,10 +72,10 @@
 		restoring = FALSE
 		return
 	ai_slot.locked =TRUE
-	A.adjustOxyLoss(-1, 0)
-	A.adjustFireLoss(-1, 0)
-	A.adjustToxLoss(-1, 0)
-	A.adjustBruteLoss(-1, 0)
+	A.adjustOxyLoss(-5, 0)
+	A.adjustFireLoss(-5, 0)
+	A.adjustToxLoss(-5, 0)
+	A.adjustBruteLoss(-5, 0)
 	A.updatehealth()
 	if(A.health >= 0 && A.stat == DEAD)
 		A.revive()
