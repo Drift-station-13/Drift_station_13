@@ -4,6 +4,9 @@
 
 	var/atom/movable/movingmob
 
+	var/drift_offset_x
+	var/drift_offset_y
+
 /datum/hud/proc/create_parallax(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
 	var/client/C = screenmob.client
@@ -45,10 +48,6 @@
 		C.screen += PM
 	PM.color = initial(PM.color)
 
-
-
-
-
 /datum/hud/proc/update_parallax()
 	var/client/C = mymob.client
 	var/turf/posobj = get_turf(C.eye)
@@ -63,8 +62,12 @@
 
 	for(var/obj/ys_screen/parallax_layer/L in C.parallax_layers)
 
-		L.offset_x += diff_x
-		//L.offset_y += diff_y
+		L.offset_x += diff_x + C.drift_offset_x
+		L.offset_y += diff_y + C.drift_offset_y
+
+		if(C.drift_offset_x != 0 || C.drift_offset_y != 0)
+			C.drift_offset_x = 0
+			C.drift_offset_y = 0
 
 
 		if(L.offset_x<L.img_overflow_x)
@@ -74,12 +77,11 @@
 			to_chat(C, "X2 [L.offset_x] > 0")
 			L.offset_x = L.img_overflow_x
 
-		/*
 		if(L.offset_x<L.img_overflow_y)
-			L.offset_y = -1
+			L.offset_y = 0
 		if(L.offset_y > 0)
-			L.offset_y = L.img_overflow_y + 1
-		*/
+			L.offset_y = L.img_overflow_y
+
 
 		to_chat(C, "[L.offset_x], [L.offset_y] :: [diff_x], [diff_y]")
 
@@ -89,7 +91,6 @@
 
 	return
 
-
 /atom/movable/proc/update_parallax_contents()
 	if(length(client_mobs_in_contents))
 		for(var/thing in client_mobs_in_contents)
@@ -98,7 +99,8 @@
 				M.hud_used.update_parallax()
 
 /atom/movable/proc/update_parallax_teleport()
-	warning("update_parallax_teleport was called!")
+	//warning("update_parallax_teleport was called!")
+	//update_parallax()
 	return
 
 /datum/hud/proc/update_parallax_pref(mob/viewmob)
@@ -115,8 +117,8 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 255
 
-	var/offset_x = -1
-	var/offset_y = -1
+	var/offset_x = -337
+	var/offset_y = -240
 	var/img_overflow_x = -675
 	var/img_overflow_y = -480
 
