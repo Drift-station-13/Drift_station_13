@@ -832,7 +832,7 @@
 
 /obj/item/borg/apparatus/beaker
 	name = "medical gripper"
-	desc = "A special apparatus for carrying beakers and pills. Alt-Z or right-click to drop the beaker."
+	desc = "A special apparatus for carrying beakers and pills. Alt-Z or right-click to drop items."
 	icon_state = "borg_beaker_apparatus_medical"
 	storable = list(/obj/item/reagent_containers/glass/beaker,
 				/obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/pill)
@@ -891,9 +891,27 @@
 	name = "secondary medical gripper"
 	desc = "A supplementary beaker storage apparatus."
 
+// Misc Grippers
+
+/obj/item/borg/apparatus/circuit/science
+	name = "science gripper"
+	desc = "A special apparatus for manipulating all sorts of scientific items! Alt-Z or right-click to drop items."
+	icon_state = "gripper"
+	storable = list(/obj/item/stock_parts/, /obj/item/stack/sheet/mineral/plasma, /obj/item/reagent_containers/glass/beaker,
+	/obj/item/slime_extract/, /obj/item/reagent_containers/food/snacks/monkeycube, /obj/item/reagent_containers/dropper)
+
+/obj/item/borg/apparatus/circuit/robotics
+	name = "robotics gripper"
+	desc = "A special apparatus for manipulating cyborg components and some materials such as metal, glass, gold, silver, and uranium. Alt-Z or right-click to drop items."
+	icon_state = "borg_beaker_apparatus"
+	storable = list(/obj/item/stack/sheet/mineral/gold, /obj/item/stack/sheet/mineral/uranium, /obj/item/stack/sheet/mineral/silver,
+	/obj/item/stack/sheet/glass/, /obj/item/stack/sheet/metal/, /obj/item/assembly/flash/handheld, /obj/item/stock_parts/cell/, /obj/item/mmi/,
+	/obj/item/stack/cable_coil, /obj/item/robot_suit, /obj/item/bodypart/chest/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot,
+	/obj/item/bodypart/head/robot, /obj/item/bodypart/l_leg/robot, /obj/item/bodypart/r_leg/robot, /obj/item/borg/upgrade/)
+
 /obj/item/borg/apparatus/beaker/service
 	name = "beverage storage apparatus"
-	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop the beaker."
+	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop items."
 	icon_state = "borg_beaker_apparatus"
 	storable = list(/obj/item/reagent_containers/food/drinks/,
 				/obj/item/reagent_containers/food/condiment)

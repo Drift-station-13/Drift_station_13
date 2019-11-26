@@ -591,12 +591,12 @@
 		R.update_transform()
 
 /obj/item/borg/upgrade/rped
-	name = "engineering cyborg BSRPED"
-	desc = "A rapid part exchange device for the engineering cyborg."
+	name = "science cyborg BSRPED"
+	desc = "A blue space rapid part exchange device for the science cyborg."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "borg_BS_RPED"
 	require_module = TRUE
-	module_type = /obj/item/robot_module/engineering
+	module_type = /obj/item/robot_module/science
 
 /obj/item/borg/upgrade/rped/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -671,3 +671,31 @@
 	desc = "Allows you to to turn a cyborg into a clown, honk."
 	icon_state = "cyborg_upgrade3"
 	new_module = /obj/item/robot_module/clown
+
+/obj/item/borg/upgrade/roboticgrip
+	name = "robotics gripper"
+	desc = "A gripper for the science cyborg that can manipulate cyborg components and some materials."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "upgrade_kit"
+	require_module = TRUE
+	module_type = /obj/item/robot_module/science
+
+/obj/item/borg/upgrade/roboticgrip/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if(.)
+
+		var/obj/item/borg/apparatus/circuit/robotics/RG = locate() in R
+		if(RG)
+			to_chat(user, "<span class='warning'>This unit is already equipped with a robotics gripper module.</span>")
+			return FALSE
+
+		RG = new(R.module)
+		R.module.basic_modules += RG
+		R.module.add_module(RG, FALSE, TRUE)
+
+/obj/item/borg/upgrade/roboticgrip/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (.)
+		var/obj/item/pinpointer/crew/RG = locate() in R.module
+		if (RG)
+			R.module.remove_module(RG, TRUE)

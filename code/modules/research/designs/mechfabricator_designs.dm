@@ -617,6 +617,16 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
+/datum/design/borg_upgrade_roboticgrip
+	name = "Cyborg Upgrade (Robotics Manipulator)"
+	id = "borg_upgrade_roboticgrip"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/roboticgrip
+	materials = list(MAT_METAL=20000 , MAT_GLASS=1500 , MAT_GOLD= 200, MAT_SILVER= 200)
+	construction_time = 140
+	category = list("Cyborg Upgrade Modules")
+
+
 /datum/design/borg_upgrade_diamonddrill
 	name = "Cyborg Upgrade (Diamond Drill)"
 	id = "borg_upgrade_diamonddrill"
