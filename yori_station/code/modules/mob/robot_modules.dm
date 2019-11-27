@@ -198,7 +198,7 @@ obj/item/robot_module/detective/be_transformed_to(obj/item/robot_module/old_modu
 
 obj/item/robot_module/science/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Xenobot", "Eyebot", "Can", "Classic")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Xenobot", "Eyebot", "Can", "Classic", "Robobrain", "Robobrain - Posi")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -225,6 +225,14 @@ obj/item/robot_module/science/be_transformed_to(obj/item/robot_module/old_module
 			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 			has_snowflake_deadsprite = TRUE
 			hat_offset = 0
+		if("Robobrain")
+			cyborg_base_icon = "robobrain-sci"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+			has_snowflake_deadsprite = TRUE
+		if("Robobrain - Posi")
+			cyborg_base_icon = "robobrain-sci-posi"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+			has_snowflake_deadsprite = TRUE
 	return ..()
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
