@@ -29,7 +29,6 @@ map metastation
 endmap
 
 map pubbystation
-	default
 endmap
 
 map omegastation
@@ -41,4 +40,5 @@ map deltastation
 endmap
 
 map runtimestation
+  default
 endmap

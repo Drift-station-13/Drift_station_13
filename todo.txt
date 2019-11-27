@@ -26,3 +26,6 @@
 [ ] HEV suite stuff
 [ ] Black orbit
 [ ] Access denied on buttons will make a sound like doors
+
+
+/modules/mapping/reader.dm

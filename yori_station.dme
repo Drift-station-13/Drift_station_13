@@ -2980,6 +2980,7 @@
 #include "modular_citadel\code\modules\research\xenobiology\xenobio_camera.dm"
 #include "modular_citadel\code\modules\vehicles\secway.dm"
 #include "modular_citadel\interface\skin.dmf"
+#include "yori_station\code\dmlua.dm"
 #include "yori_station\code\datums\donutstation_shuttles.dm"
 #include "yori_station\code\datums\kilo_shuttles.dm"
 #include "yori_station\code\game\area\donutstation_compat.dm"
