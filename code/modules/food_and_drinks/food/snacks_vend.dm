@@ -31,8 +31,8 @@
 	junkiness = 0
 
 /obj/item/reagent_containers/food/snacks/chips
-	name = "chips"
-	desc = "Commander Riker's What-The-Crisps."
+	name = "Space chips"
+	desc = "Space Luxarie's What-The-Crisps! brand chips."
 	icon_state = "chips"
 	trash = /obj/item/trash/chips
 	bitesize = 1
