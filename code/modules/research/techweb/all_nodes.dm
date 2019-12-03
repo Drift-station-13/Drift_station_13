@@ -358,6 +358,15 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
 
+/datum/techweb_node/cyborg_upg_custodial
+	id = "cyborg_upg_custodial"
+	display_name = "Cyborg Upgrades: Custodial"
+	description = "We really should fire and borg those janitors."
+	prereq_ids = list("adv_robotics", "janitor")
+	design_ids = list("borg_upgrade_janispray")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	export_price = 3000
+
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
 	display_name = "Cyborg Upgrades: Medical"

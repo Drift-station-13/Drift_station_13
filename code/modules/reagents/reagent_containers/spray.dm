@@ -313,3 +313,41 @@
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	volume = 100
 	list_reagents = list("plantbgone" = 100)
+
+
+/obj/item/reagent_containers/spray/chemsprayer/janitor
+	name = "janitor chem sprayer"
+	desc = "A tool used to spray large amounts of cleaning reagents in a given area. It regenerates space cleaner by itself."
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "chemsprayer_janitor"
+	item_state = "chemsprayer_janitor"
+	lefthand_file = 'icons/mob/inhands/equipment/mister_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mister_righthand.dmi'
+	reagent_flags = NONE
+	list_reagents = list("cleaner" = 1000)
+	volume = 1000
+	amount_per_transfer_from_this = 5
+	var/generate_amount = 50
+	var/generate_type = "cleaner"
+	var/last_generate = 0
+	var/generate_delay = 10	//deciseconds
+
+/obj/item/reagent_containers/spray/chemsprayer/janitor/Initialize()
+	. = ..()
+	START_PROCESSING(SSfastprocess, src)
+
+/obj/item/reagent_containers/spray/chemsprayer/janitor/Destroy()
+	STOP_PROCESSING(SSfastprocess, src)
+	return ..()
+
+/obj/item/reagent_containers/spray/chemsprayer/janitor/process()
+	if(world.time < last_generate + generate_delay)
+		return
+	last_generate = world.time
+	reagents.add_reagent(generate_type, generate_amount)
+
+/obj/item/reagent_containers/spray/chemsprayer/janitor/borg
+	name = "integrated janitor chem sprayer"
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "chemsprayer_janitor_borg"
+	item_state = "chemsprayer_janitor"
