@@ -179,17 +179,17 @@
 	name = "integrated toolset implant"
 	desc = "A stripped-down version of the engineering cyborg toolset, designed to be installed on subject's arm. Contains all necessary tools."
 	contents = newlist(/obj/item/screwdriver/cyborg, /obj/item/wrench/cyborg, /obj/item/weldingtool/largetank/cyborg,
-		/obj/item/crowbar/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/cyborg)
+		/obj/item/crowbar/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/cyborg, /obj/item/pipe_dispenser/borg)
 
 /obj/item/organ/cyberimp/arm/toolset/l
 	zone = BODY_ZONE_L_ARM
 
 /obj/item/organ/cyberimp/arm/toolset/emag_act()
 	. = ..()
-	if(locate(/obj/item/kitchen/knife/combat/cyborg) in items_list)
+	if(locate(/obj/item/borg/stun) in items_list)
 		return
-	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += new /obj/item/kitchen/knife/combat/cyborg(src)
+	to_chat(usr, "<span class='notice'>You reroute [src]'s power reserves into a spare tool slot to create a stun arm!</span>")
+	items_list += new /obj/item/borg/stun(src)
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/esword

@@ -588,6 +588,7 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
+/*
 /datum/design/borg_upgrade_vtec
 	name = "Cyborg Upgrade (VTEC Module)"
 	id = "borg_upgrade_vtec"
@@ -596,6 +597,7 @@
 	materials = list(MAT_METAL=80000 , MAT_GLASS=6000 , MAT_URANIUM= 5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
+*/
 
 /datum/design/borg_upgrade_thrusters
 	name = "Cyborg Upgrade (Ion Thrusters)"
@@ -603,6 +605,15 @@
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/thrusters
 	materials = list(MAT_METAL=10000, MAT_PLASMA=5000, MAT_URANIUM = 6000)
+	construction_time = 120
+	category = list("Cyborg Upgrade Modules")
+
+/datum/design/borg_upgrade_spray
+	name = "Cyborg Upgrade (Janitor Chem Sprayer)"
+	id = "borg_upgrade_janispray"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/janispray
+	materials = list(MAT_METAL=10000,MAT_PLASMA=6000,MAT_URANIUM=4000,MAT_GOLD=2000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
@@ -614,6 +625,16 @@
 	materials = list(MAT_METAL=80000 , MAT_GLASS=6000 , MAT_GOLD= 2000, MAT_DIAMOND = 500)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
+
+/datum/design/borg_upgrade_roboticgrip
+	name = "Cyborg Upgrade (Robotics Manipulator)"
+	id = "borg_upgrade_roboticgrip"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/roboticgrip
+	materials = list(MAT_METAL=20000 , MAT_GLASS=1500 , MAT_GOLD= 200, MAT_SILVER= 200)
+	construction_time = 140
+	category = list("Cyborg Upgrade Modules")
+
 
 /datum/design/borg_upgrade_diamonddrill
 	name = "Cyborg Upgrade (Diamond Drill)"
@@ -704,7 +725,7 @@
 	materials = list(MAT_METAL=15000, MAT_GLASS=15000, MAT_SILVER=10000, MAT_GOLD=10000, MAT_TITANIUM=5000, MAT_DIAMOND=5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
-	
+
 /datum/design/borg_upgrade_surgicalprocessor
 	name = "Cyborg Upgrade (Surgical Processor)"
 	id = "borg_upgrade_surgicalprocessor"
@@ -732,6 +753,7 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
+/*
 /datum/design/borg_upgrade_expand
 	name = "Cyborg Upgrade (Expand)"
 	id = "borg_upgrade_expand"
@@ -740,6 +762,7 @@
 	materials = list(MAT_METAL=200000, MAT_TITANIUM=5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
+*/
 
 /datum/design/boris_ai_controller
 	name = "B.O.R.I.S. AI-Cyborg Remote Control Module"

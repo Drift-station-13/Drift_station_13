@@ -96,7 +96,7 @@
 	display_name = "Advanced Surgery Tools"
 	description = "Refined and improved redesigns for the run-of-the-mill medical utensils."
 	prereq_ids = list("adv_biotech", "adv_surgery")
-	design_ids = list("drapes", "retractor_adv", "hemostat_adv", "cautery_adv", "surgicaldrill_adv", "scalpel_adv", "circular_saw_adv")
+	design_ids = list("drapes", "laserscalpel", "mechanicalpinches", "searingtool")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -328,8 +328,8 @@
 	display_name = "Advanced Robotics Research"
 	description = "It can even do the dishes!"
 	prereq_ids = list("robotics")
-	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_advancedmop")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_advancedmop", "borg_upgrade_roboticgrip")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
 	export_price = 5000
 
 /datum/techweb_node/neural_programming
@@ -354,9 +354,18 @@
 	display_name = "Cyborg Upgrades: Utility"
 	description = "Utility upgrades for cyborgs."
 	prereq_ids = list("engineering", "robotics")
-	design_ids = list("borg_upgrade_holding", "borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_expand", "borg_upgrade_rped")
+	design_ids = list("borg_upgrade_holding", "borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_rped")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
+
+/datum/techweb_node/cyborg_upg_custodial
+	id = "cyborg_upg_custodial"
+	display_name = "Cyborg Upgrades: Custodial"
+	description = "We really should fire and borg those janitors."
+	prereq_ids = list("adv_robotics", "janitor")
+	design_ids = list("borg_upgrade_janispray")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	export_price = 3000
 
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
@@ -372,7 +381,7 @@
 	display_name = "Cyborg Upgrades: Combat"
 	description = "Military grade upgrades for cyborgs."
 	prereq_ids = list("adv_robotics", "adv_engi" , "weaponry")
-	design_ids = list("borg_upgrade_vtec", "borg_upgrade_disablercooler")
+	design_ids = list("borg_upgrade_disablercooler")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 

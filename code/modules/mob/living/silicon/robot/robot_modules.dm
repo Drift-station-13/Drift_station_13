@@ -269,6 +269,8 @@
 	name = "Medical"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
+		/obj/item/wrench/cyborg/medical,
+		/obj/item/borg/apparatus/beaker,
 		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/borghypo,
 		/obj/item/reagent_containers/glass/beaker/large,
@@ -288,7 +290,7 @@
 		/obj/item/organ_storage,
 		/obj/item/borg/lollipop,
 		/obj/item/sensor_device)
-	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
+	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked, /obj/item/healthanalyzer/rad_laser)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
 		/obj/item/clockwork/weapon/ratvarian_spear)
@@ -303,7 +305,7 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/borg/sight/meson,
 		/obj/item/construction/rcd/borg,
-		/obj/item/pipe_dispenser,
+		/obj/item/pipe_dispenser/borg,
 		/obj/item/extinguisher,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/screwdriver/cyborg,
@@ -315,7 +317,7 @@
 		/obj/item/analyzer,
 		/obj/item/storage/part_replacer/cyborg,
 		/obj/item/holosign_creator/atmos,
-		/obj/item/weapon/gripper,
+		/obj/item/borg/apparatus/circuit,
 		/obj/item/lightreplacer/cyborg,
 		/obj/item/geiger_counter/cyborg,
 		/obj/item/assembly/signaler/cyborg,
@@ -330,7 +332,8 @@
 	emag_modules = list(/obj/item/borg/stun)
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/engineer,
-		/obj/item/clockwork/replica_fabricator/cyborg)
+		/obj/item/clockwork/replica_fabricator/cyborg,
+		/obj/item/weldingtool/experimental/brass)
 	cyborg_base_icon = "engineer"
 	moduleselect_icon = "engineer"
 	magpulsing = TRUE
@@ -377,6 +380,29 @@
 	moduleselect_icon = "detective"
 	can_be_pushed = FALSE
 	hat_offset = 3
+
+/obj/item/robot_module/science
+	name = "Science"
+	basic_modules = list(
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/multitool/cyborg,
+		/obj/item/crowbar/cyborg,
+		/obj/item/screwdriver/cyborg,
+		/obj/item/borg/apparatus/circuit/science,
+		/obj/item/reagent_containers/glass/beaker/large,
+		/obj/item/reagent_containers/glass/beaker/large,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/extinguisher,
+		/obj/item/slime_scanner,
+		/obj/item/storage/bag/bio/holding,
+		/obj/item/storage/part_replacer/cyborg)
+	emag_modules = list(/obj/item/gun/chem)
+	ratvar_modules = list(
+		/obj/item/clockwork/slab/cyborg/engineer,
+		/obj/item/clockwork/replica_fabricator/cyborg)
+	cyborg_base_icon = "science"
+	moduleselect_icon = "science"
+	hat_offset = -4
 
 /obj/item/robot_module/security/do_transform_animation()
 	..()
@@ -509,6 +535,7 @@
 		/obj/item/lighter,
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
+		/obj/item/borg/apparatus/beaker/service,
 		/obj/item/borg/lollipop)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,
@@ -583,6 +610,7 @@
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/borg/apparatus/beaker,
 		/obj/item/twohanded/shockpaddles/syndicate,
 		/obj/item/healthanalyzer,
 		/obj/item/surgical_drapes,

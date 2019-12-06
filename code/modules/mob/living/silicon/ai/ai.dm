@@ -669,7 +669,8 @@
 				"default" = 'icons/mob/ai.dmi',
 				"floating face" = 'icons/mob/ai.dmi',
 				"xeno queen" = 'icons/mob/alien.dmi',
-				"horror" = 'icons/mob/ai.dmi'
+				"horror" = 'icons/mob/ai.dmi',
+				"clock" = 'icons/mob/ai.dmi'
 				)
 
 			input = input("Please select a hologram:") as null|anything in icon_list

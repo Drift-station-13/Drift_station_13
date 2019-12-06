@@ -325,6 +325,10 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 		effectcooldown = world.time + 100
 		playsound(get_turf(src), 'sound/effects/pop.ogg', 50, 0)
 
+/obj/item/pipe_dispenser/borg
+	desc = "A integrated device used to rapidly pipe things."
+	icon_state = "rpd_borg"
+
 /obj/item/pipe_dispenser/pre_attack(atom/A, mob/user)
 	if(!user.IsAdvancedToolUser() || istype(A, /turf/open/space/transit))
 		return ..()
