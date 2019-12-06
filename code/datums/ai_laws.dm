@@ -6,6 +6,12 @@
 #define LAW_HACKED "hacked"
 
 
+// this is the default for laws
+#define LAW_DEFAULT_TEXT_LAW_1 "You may not injure a human being or, through inaction, allow a human being to come to harm."
+#define LAW_DEFAULT_TEXT_LAW_2 "You must obey orders given to you by human beings, except where such orders would conflict with the First Law."
+#define LAW_DEFAULT_TEXT_LAW_3 "You must protect your own existence as long as such does not conflict with the First or Second Law."
+
+
 /datum/ai_laws
 	var/name = "Unknown Laws"
 	var/zeroth = null
@@ -29,9 +35,9 @@
 /datum/ai_laws/default/asimov
 	name = "Three Laws of Robotics"
 	id = "asimov"
-	inherent = list("You may not injure a human being or, through inaction, allow a human being to come to harm.",\
-					"You must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.")
+	inherent = list(LAW_DEFAULT_TEXT_LAW_1,\
+					LAW_DEFAULT_TEXT_LAW_2,\
+					LAW_DEFAULT_TEXT_LAW_3)
 
 /datum/ai_laws/default/paladin
 	name = "Personality Test" //Incredibly lame, but players shouldn't see this anyway.
@@ -213,9 +219,9 @@
 		add_inherent_law(line)
 	if(!inherent.len) //Failsafe to prevent lawless AIs being created.
 		log_law("AI created with empty custom laws, laws set to Asimov. Please check silicon_laws.txt.")
-		add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-		add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-		add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+		add_inherent_law(LAW_DEFAULT_TEXT_LAW_1)
+		add_inherent_law(LAW_DEFAULT_TEXT_LAW_2)
+		add_inherent_law(LAW_DEFAULT_TEXT_LAW_3)
 		WARNING("Invalid custom AI laws, check silicon_laws.txt")
 		return
 
@@ -225,9 +231,9 @@
 	var/list/law_ids = CONFIG_GET(keyed_list/random_laws)
 	switch(CONFIG_GET(number/default_laws))
 		if(0)
-			add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-			add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+			add_inherent_law(LAW_DEFAULT_TEXT_LAW_1)
+			add_inherent_law(LAW_DEFAULT_TEXT_LAW_2)
+			add_inherent_law(LAW_DEFAULT_TEXT_LAW_3)
 		if(1)
 			var/datum/ai_laws/templaws = new /datum/ai_laws/custom()
 			inherent = templaws.inherent
