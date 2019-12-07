@@ -256,6 +256,7 @@
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
 		/obj/item/wantedposterposter,
+		/obj/item/borg/apparatus/circuit/bureaucratic,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/transforming/energy/sword/cyborg)
 	ratvar_modules = list(
@@ -362,6 +363,7 @@
 	name = "detective"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
+		/obj/item/borg/apparatus/circuit/bureaucratic,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/loaded,
 		/obj/item/evidencebag ,
@@ -370,6 +372,7 @@
 		/obj/item/pen,
 		/obj/item/extinguisher/mini,
 		/obj/item/lighter,
+		/obj/item/folder/blue,
 		/obj/item/detective_scanner,
 		/obj/item/healthanalyzer,
 		/obj/item/wantedposterposter)
@@ -517,6 +520,32 @@
 	cyborg_base_icon = "clown"
 	hat_offset = -2
 
+/obj/item/robot_module/command
+	name = "Command"
+	basic_modules = list(
+	/obj/item/assembly/flash/cyborg,
+	/obj/item/gun/energy/disabler/cyborg,
+	/obj/item/restraints/handcuffs/cable/zipties,
+	/obj/item/borg/apparatus/circuit/bureaucratic,
+	/obj/item/borg/apparatus/circuit/command,
+	/obj/item/wrench/cyborg,
+	/obj/item/crowbar/cyborg,
+	/obj/item/weldingtool/mini,
+	/obj/item/pen/fountain,
+	/obj/item/folder/blue,
+	/obj/item/evidencebag,
+	/obj/item/pinpointer/crew,
+	/obj/item/megaphone,
+	/obj/item/extinguisher/mini)
+	emag_modules = list(/obj/item/gun/energy/laser/captain)
+	ratvar_modules = list(
+		/obj/item/clockwork/slab/cyborg/service,
+		/obj/item/borg/sight/xray/truesight_lens)
+	cyborg_base_icon = "command"
+	moduleselect_icon = "command"
+	can_be_pushed = FALSE
+	hat_offset = -3
+
 /obj/item/robot_module/butler
 	name = "Service"
 	basic_modules = list(
@@ -524,6 +553,9 @@
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
 		/obj/item/reagent_containers/food/condiment/enzyme,
 		/obj/item/pen,
+		/obj/item/folder/yellow,
+		/obj/item/borg/apparatus/circuit/bureaucratic,
+		/obj/item/borg/apparatus/beaker/service,
 		/obj/item/toy/crayon/spraycan/borg,
 		/obj/item/extinguisher/mini,
 		/obj/item/hand_labeler/borg,
@@ -535,7 +567,6 @@
 		/obj/item/lighter,
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
-		/obj/item/borg/apparatus/beaker/service,
 		/obj/item/borg/lollipop)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,

@@ -101,6 +101,7 @@
 	/obj/item/clothing/head/fedora,
 	/obj/item/clothing/head/beanie/, //All beanies
 	/obj/item/clothing/ears/headphones,
+	/obj/item/clothing/head/bowler,
 	/obj/item/clothing/head/helmet/skull,
 	/obj/item/clothing/head/crown/fancy)
 
@@ -838,8 +839,11 @@
 /mob/living/silicon/robot/modules/detective
 	set_module = /obj/item/robot_module/detective
 
-/mob/living/silicon/robot/modules/detective
+/mob/living/silicon/robot/modules/science
 	set_module = /obj/item/robot_module/science
+
+/mob/living/silicon/robot/modules/command
+	set_module = /obj/item/robot_module/command
 
 /mob/living/silicon/robot/modules/clown
 	set_module = /obj/item/robot_module/clown

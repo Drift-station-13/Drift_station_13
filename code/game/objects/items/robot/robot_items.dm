@@ -909,6 +909,18 @@
 	/obj/item/stack/cable_coil, /obj/item/robot_suit, /obj/item/bodypart/chest/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot,
 	/obj/item/bodypart/head/robot, /obj/item/bodypart/l_leg/robot, /obj/item/bodypart/r_leg/robot, /obj/item/borg/upgrade/)
 
+/obj/item/borg/apparatus/circuit/command
+	name = "command gripper"
+	desc = "A special apparatus for manipulating all sorts of important NT items! Such as Ai cards, ID cards, PDAs, the pinpointer, the disk, and law cards. Alt-Z or right-click to drop items."
+	icon_state = "gripper"
+	storable = list(/obj/item/aicard, /obj/item/disk/nuclear, /obj/item/pinpointer/nuke, /obj/item/aiModule, /obj/item/card/id, /obj/item/pda, /obj/item/cartridge)
+
+/obj/item/borg/apparatus/circuit/bureaucratic
+	name = "bureaucratic gripper"
+	desc = "A special apparatus for manipulating all sorts of paperwork and even pens and folders! Alt-Z or right-click to drop items."
+	icon_state = "gripper"
+	storable = list(/obj/item/paper, /obj/item/book, /obj/item/pen, /obj/item/folder, /obj/item/stamp)
+
 /obj/item/borg/apparatus/beaker/service
 	name = "beverage storage apparatus"
 	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop items."

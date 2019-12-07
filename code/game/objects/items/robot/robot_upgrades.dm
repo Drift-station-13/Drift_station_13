@@ -672,6 +672,12 @@
 	icon_state = "cyborg_upgrade3"
 	new_module = /obj/item/robot_module/clown
 
+/obj/item/borg/upgrade/transform/command
+	name = "borg promotion card"
+	desc = "Allows you to to promote a cyborg into a command borg. Command borgs are a mix between security and standard borgs made to assist command staff. Warning this is one time use!"
+	icon_state = "cyborg_upgrade3"
+	new_module = /obj/item/robot_module/command
+
 /obj/item/borg/upgrade/roboticgrip
 	name = "robotics gripper"
 	desc = "A gripper for the science cyborg that can manipulate cyborg components and some materials."
