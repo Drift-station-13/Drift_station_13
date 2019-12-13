@@ -667,6 +667,10 @@
 		else
 			var/list/icon_list = list(
 				"default" = 'icons/mob/ai.dmi',
+				"borg" = 'icons/mob/ai.dmi',
+				"male" = 'icons/mob/ai.dmi',
+				"female" = 'icons/mob/ai.dmi',
+				"moth" = 'icons/mob/ai.dmi',
 				"floating face" = 'icons/mob/ai.dmi',
 				"xeno queen" = 'icons/mob/alien.dmi',
 				"horror" = 'icons/mob/ai.dmi',
