@@ -28,8 +28,9 @@
 	if (QDELETED(src))
 		return 0
 
-	if(.) //not dead
-		handle_active_genes()
+	if(!IsInStasis())
+		if(.) //not dead
+			handle_active_genes()
 
 	if(stat != DEAD)
 		//heart attack stuff
@@ -38,11 +39,11 @@
 	if(stat != DEAD)
 		//Stuff jammed in your limbs hurts
 		handle_embedded_objects()
+		dna.species.spec_life(src) // for mutantraces
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
 
-	dna.species.spec_life(src) // for mutantraces
 
 	if(stat != DEAD)
 		return 1

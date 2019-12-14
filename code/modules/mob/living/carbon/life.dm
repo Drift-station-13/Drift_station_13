@@ -8,28 +8,29 @@
 		damageoverlaytemp = 0
 		update_damage_hud()
 
-	if(stat != DEAD) //Reagent processing needs to come before breathing, to prevent edge cases.
-		handle_organs()
+	if(!IsInStasis())
+		if(stat != DEAD) //Reagent processing needs to come before breathing, to prevent edge cases.
+			handle_organs()
 
-	. = ..()
+		. = ..()
 
-	if (QDELETED(src))
-		return
+		if (QDELETED(src))
+			return
 
-	if(.) //not dead
-		handle_blood()
+		if(.) //not dead
+			handle_blood()
 
-	if(stat != DEAD)
-		var/bprv = handle_bodyparts()
-		if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
-			updatehealth()
-	update_stamina()
+		if(stat != DEAD)
+			var/bprv = handle_bodyparts()
+			if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
+				updatehealth()
+		update_stamina()
 
-	if(stat != DEAD)
-		handle_brain_damage()
+		if(stat != DEAD)
+			handle_brain_damage()
 
-	if(stat != DEAD)
-		handle_liver()
+		if(stat != DEAD)
+			handle_liver()
 
 	if(stat == DEAD)
 		stop_sound_channel(CHANNEL_HEARTBEAT)
@@ -63,10 +64,7 @@
 	/* REMOVED BY YORI [VR]
 	if(istype(loc, /obj/item/dogborg/sleeper))
 		return
-	if(isbelly(loc))
-		return
 	*/
-	//TODO: Check if ismob() is a part of degen vore shit.
 	if(ismob(loc))
 		return
 
@@ -450,7 +448,6 @@ Alcohol Poisoning Chart
 Note that all higher effects of alcohol poisoning will inherit effects for smaller amounts (i.e. light poisoning inherts from slight poisoning)
 In addition, severe effects won't always trigger unless the drink is poisonously strong
 All effects don't start immediately, but rather get worse over time; the rate is affected by the imbiber's alcohol tolerance
-
 0: Non-alcoholic
 1-10: Barely classifiable as alcohol - occassional slurring
 11-20: Slight alcohol content - slurring
