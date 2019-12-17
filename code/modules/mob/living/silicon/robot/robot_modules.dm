@@ -272,8 +272,8 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/wrench/cyborg/medical,
 		/obj/item/borg/apparatus/beaker,
-		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/borghypo,
+		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/glass/beaker/large,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/reagent_containers/syringe,
@@ -366,7 +366,6 @@
 		/obj/item/borg/apparatus/circuit/bureaucratic,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/loaded,
-		/obj/item/evidencebag ,
 		/obj/item/reagent_containers/borghypo/borgshakerdet ,
 		/obj/item/rsf/cyborg,
 		/obj/item/pen,
@@ -533,9 +532,10 @@
 	/obj/item/weldingtool/mini,
 	/obj/item/pen/fountain,
 	/obj/item/folder/blue,
-	/obj/item/evidencebag,
 	/obj/item/pinpointer/crew,
 	/obj/item/megaphone,
+	/obj/item/reagent_containers/borghypo/epi,
+	/obj/item/healthanalyzer,
 	/obj/item/extinguisher/mini)
 	emag_modules = list(/obj/item/gun/energy/laser/captain)
 	ratvar_modules = list(
