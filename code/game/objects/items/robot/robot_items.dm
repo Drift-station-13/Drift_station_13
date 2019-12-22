@@ -895,10 +895,10 @@
 
 /obj/item/borg/apparatus/circuit/science
 	name = "science gripper"
-	desc = "A special apparatus for manipulating parts, plasma sheets, beakers, slime extracts, and monkey cubes! Alt-Z or right-click to drop items."
+	desc = "A special apparatus for manipulating parts, plasma sheets, beakers, slime extracts, strange objects, and even monkey cubes! Alt-Z or right-click to drop items."
 	icon_state = "gripper"
 	storable = list(/obj/item/stock_parts/, /obj/item/stack/sheet/mineral/plasma, /obj/item/reagent_containers/glass/beaker,
-	/obj/item/slime_extract/, /obj/item/reagent_containers/food/snacks/monkeycube, /obj/item/reagent_containers/dropper)
+	/obj/item/slime_extract/, /obj/item/reagent_containers/food/snacks/monkeycube, /obj/item/reagent_containers/dropper, /obj/item/relic)
 
 /obj/item/borg/apparatus/circuit/robotics
 	name = "robotics gripper"
