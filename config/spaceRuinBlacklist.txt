@@ -1,6 +1,6 @@
 #Listing maps here will blacklist them from generating in space.
 #Maps must be the full path to them
-#A list of maps valid to blacklist can be found in _maps\RandomRuins\SpaceRuins
+#A list of maps valid to blacklist can be found in #_maps\RandomRuins\SpaceRuins
 #SPECIFYING AN INVALID MAP WILL RESULT IN RUNTIMES ON GAME START
 
 #_maps/RandomRuins/SpaceRuins/abandonedteleporter.dmm
@@ -23,6 +23,7 @@
 #_maps/RandomRuins/SpaceRuins/derelict4.dmm
 #_maps/RandomRuins/SpaceRuins/derelict5.dmm
 #_maps/RandomRuins/SpaceRuins/derelict6.dmm
+#_maps/RandomRuins/SpaceRuins/DerelictOmega.dmm
 #_maps/RandomRuins/SpaceRuins/djstation.dmm
 #_maps/RandomRuins/SpaceRuins/emptyshell.dmm
 #_maps/RandomRuins/SpaceRuins/gasthelizards.dmm
