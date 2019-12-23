@@ -95,7 +95,7 @@
 
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Omoikane", "Xenobot")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Spider", "Omoikane", "Xenobot", "Platform")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -116,6 +116,11 @@
 			cyborg_base_icon = "xenobot-peace"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
 			has_snowflake_deadsprite = TRUE
+		if("Platform")
+			cyborg_base_icon = "platform-peace"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+			has_snowflake_deadsprite = TRUE
+			hat_offset = INFINITY
 	return ..()
 
 /obj/item/robot_module/security/be_transformed_to(obj/item/robot_module/old_module)
