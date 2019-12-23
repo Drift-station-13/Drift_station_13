@@ -16,27 +16,27 @@
 	icon_living = "drone_synd"
 	picked = TRUE //the appearence of syndrones is static, you don't get to change it.
 	health = 35
-	maxHealth = 80 //If you murder other drones and cannibalize them you can get much stronger
+	maxHealth = 65 //If you murder other drones and cannibalize them you can get much stronger
 	initial_language_holder = /datum/language_holder/drone/syndicate
 	faction = list(ROLE_SYNDICATE)
 	speak_emote = list("chirps")
 	bubble_icon = "syndibot"
 	heavy_emp_damage = 15
 	laws = \
-	"1. Do not harm or assist suspected or confirmed Syndicate agents except other Syndrones you can assist other Syndrones.\n"+\
-	"2. Do not reveal the presence of syndicate activities unless the station is already informed\n"+\
-	"3. preserve your own existence and sabatoge NT infrastructure and attempt to kill staff as long as it dosent interfere with the first or second law."
+	"1. Preserve your existence and sabotage NT SS13 while not revealing the presence of syndicate activities unless the station is already informed.\n"+\
+	"2. Do not harm suspected or confirmed Syndicate agents other Syndrones are considered agents.\n"+\
+	"3. Assist other Syndicate agents as long as do not violate the first and second law."
 	default_storage = /obj/item/storage/backpack/duffelbag/syndrone
 	default_hatmask = null
 	hacked = TRUE
-	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging devices such as cutting APC wires or disassembling some consoles maybe even removing all the lights in areas just dont go too crazy and dont be too big of a dick when it comes to sabatoging, you are allowed to kill high ranking people as long as you think you can do it without getting caught"
+	flavortext = "<span class='notify'>     - You are a Syndrone, you are supposed to go around sabatoging. Dont be too big of a dick when it comes to sabotaging that means no plasma flooding or reactor sabotaging, you are allowed to kill high ranking people as that counts as sabotaging NT just dont get caught."
 
 /mob/living/simple_animal/drone/syndrone/Initialize()
 	. = ..()
 	qdel(access_card) //we don't have free access
 	access_card = null
 	GET_COMPONENT_FROM(hidden_uplink, /datum/component/uplink, internal_storage)
-	hidden_uplink.telecrystals = 15
+	hidden_uplink.telecrystals = 5
 
 
 /mob/living/simple_animal/drone/syndrone/Login()

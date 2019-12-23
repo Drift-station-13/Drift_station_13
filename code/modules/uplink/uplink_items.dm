@@ -1356,10 +1356,11 @@ datum/uplink_item/stealthy_weapons/taeclowndo_shoes
 
 /datum/uplink_item/device_tools/syndrone
 	name = "Syndrone Shell"
-	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will go and sabatoge NT instilations while trying to stay hidden. Let it be noted that the drone is not programmed to help you and is instead programmed to go sabatoge on its own it is set to ignore other agents that are not other Syndrones. Can be refunded if it does not power up"
+	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will sabatoge NT instilations while trying to stay hidden. Can be refunded if it does not power up"
 	item = /obj/item/drone_shell/syndrone
 	refundable = TRUE
-	cost = 5
+	cost = 12
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 
 datum/uplink_item/device_tools/emag
 	name = "Cryptographic Sequencer"
@@ -1740,19 +1741,27 @@ datum/uplink_item/device_tools/emag
 	cost = 8
 	restricted_roles = list("Research Director", "Scientist", "Roboticist")
 
+/datum/uplink_item/device_tools/syndrone/robotics
+	name = "Syndrone Shell"
+	desc = "The Syndrone is a state of the art infiltration and sabatour robot that will sabatoge NT instilations while trying to stay hidden. Can be refunded if it does not power up"
+	item = /obj/item/drone_shell/syndrone
+	refundable = TRUE
+	cost = 8
+	restricted_roles = list("Research Director", "Roboticist")
+
 /datum/uplink_item/role_restricted/syndiemmi
 	name = "Syndicate MMI"
 	desc = "Syndicate's own brand of MMI. It enforces laws designed to help Syndicate agents achieve their goals upon cyborgs and AIs created with it."
 	item = /obj/item/mmi/syndie
 	cost = 1
-	restricted_roles = list("Roboticist")
+	restricted_roles = list("Roboticist", "Research Director")
 
 /datum/uplink_item/role_restricted/brainwash_disk
 	name = "Brainwashing Surgery Program"
 	desc = "A disk containing the procedure to perform a brainwashing surgery, allowing you to implant an objective onto a target. \
 	Insert into an Operating Console to enable the procedure."
 	item = /obj/item/disk/surgery/brainwashing
-	restricted_roles = list("Medical Doctor", "Roboticist")
+	restricted_roles = list("Medical Doctor", "Roboticist", "Research Director")
 	cost = 1
 
 /datum/uplink_item/role_restricted/clown_bomb
