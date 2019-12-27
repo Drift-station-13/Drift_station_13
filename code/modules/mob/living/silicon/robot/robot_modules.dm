@@ -246,6 +246,8 @@
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/wrench/cyborg,
 		/obj/item/crowbar/cyborg,
+		/obj/item/wantedposterposter,
+		/obj/item/borg/apparatus/circuit/bureaucratic,
 		/obj/item/stack/sheet/metal/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
@@ -255,8 +257,6 @@
 		/obj/item/t_scanner/adv_mining_scanner,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/soap/nanotrasen,
-		/obj/item/wantedposterposter,
-		/obj/item/borg/apparatus/circuit/bureaucratic,
 		/obj/item/borg/cyborghug)
 	emag_modules = list(/obj/item/melee/transforming/energy/sword/cyborg)
 	ratvar_modules = list(
@@ -428,7 +428,7 @@
 		/obj/item/clockwork/slab/cyborg/peacekeeper,
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "peace"
-	moduleselect_icon = "standard"
+	moduleselect_icon = "peace"
 	can_be_pushed = FALSE
 	hat_offset = -2
 

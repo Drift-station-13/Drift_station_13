@@ -1,3 +1,33 @@
+/obj/item/robot_module/standard/be_transformed_to(obj/item/robot_module/old_module)
+	var/mob/living/silicon/robot/R = loc
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Tread", "Durin", "Classic", "Noble")
+	if(!borg_icon)
+		return FALSE
+	switch(borg_icon)
+		if("Default")
+			cyborg_base_icon = "robot"
+			has_snowflake_deadsprite = TRUE
+		if("Tread")
+			cyborg_base_icon = "standard_tread"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+			has_snowflake_deadsprite = TRUE
+		if("Durin")
+			cyborg_base_icon = "durin"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+			has_snowflake_deadsprite = TRUE
+			hat_offset = INFINITY
+		if("Noble")
+			cyborg_base_icon = "Noble-STD"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+			has_snowflake_deadsprite = TRUE
+			hat_offset = 3
+		if("Classic")
+			cyborg_base_icon = "strandard-old"
+			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
+			has_snowflake_deadsprite = TRUE
+			hat_offset = 1
+	return ..()
+
 /obj/item/robot_module/medical/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Default", "Heavy", "Pod Bot", "Handy", "Sleek", "Droid", "Eyebot", "Standard", "Gibbs", "Noble-H", "Noble")
@@ -37,10 +67,12 @@
 			cyborg_base_icon = "Noble-MED-H"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = INFINITY
 		if("Noble")
 			cyborg_base_icon = "Noble-MED"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = 3
 		if("Pod Bot")
 			cyborg_base_icon = "podbot"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
@@ -87,10 +119,12 @@
 			cyborg_base_icon = "Noble-JAN-H"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = INFINITY
 		if("Noble")
 			cyborg_base_icon = "Noble-JAN"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = 3
 	return ..()
 
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
@@ -160,6 +194,7 @@
 			cyborg_base_icon = "securitron"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = 4
 		if("Standard")
 			cyborg_base_icon = "Standard-Secy"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_paradise.dmi'
@@ -168,10 +203,12 @@
 			cyborg_base_icon = "Noble-SEC-H"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = INFINITY
 		if("Noble")
 			cyborg_base_icon = "Noble-SEC"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
 			has_snowflake_deadsprite = TRUE
+			hat_offset = 3
 		if("Eyebot")
 			cyborg_base_icon = "eyebotsec"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_misc.dmi'
@@ -291,6 +328,7 @@ obj/item/robot_module/science/be_transformed_to(obj/item/robot_module/old_module
 			cyborg_base_icon = "Noble-SRV"
 			special_light_key = "Noble-SRV"
 			cyborg_icon_override = 'yori_station/icons/mob/robots_vg.dmi'
+			hat_offset = INFINITY
 	return ..()
 
 /obj/item/robot_module/engineering/be_transformed_to(obj/item/robot_module/old_module)
