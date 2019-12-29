@@ -578,9 +578,19 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/shears
+	name = "Amputation Shears"
+	desc = "A type of heavy duty surgical shears used for achieving a clean separation between limb and patient."
+	id = "shears"
+	build_path = /obj/item/shears
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 6000, MAT_GLASS = 1500, MAT_SILVER = 2000, MAT_GOLD = 1500)
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/mechanicalpinches
 	name = "Mechanical Retractor"
-	desc = "These pinches can be either used as retractor or hemostat."
+	desc = "This tool can be either used as retractor or hemostat."
 	id = "mechanicalpinches"
 	build_path = /obj/item/retractor/advanced
 	materials = list(MAT_METAL = 12000, MAT_GLASS = 4000, MAT_SILVER = 4000, MAT_TITANIUM = 5000)
