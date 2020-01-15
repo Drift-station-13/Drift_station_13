@@ -104,11 +104,13 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
-	var/datum/component/mobhook
+	var/mob/listeningTo
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	var/range = null
 
 /obj/item/storage/bag/ore/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage/concrete/stack)
+	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
@@ -116,15 +118,17 @@
 
 /obj/item/storage/bag/ore/equipped(mob/user)
 	. = ..()
-	if (mobhook && mobhook.parent != user)
-		QDEL_NULL(mobhook)
-	if (!mobhook)
-		mobhook = user.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED = CALLBACK(src, .proc/Pickup_ores)))
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_ores)
+	listeningTo = user
 
 /obj/item/storage/bag/ore/dropped()
 	. = ..()
-	if (mobhook)
-		QDEL_NULL(mobhook)
+	UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	listeningTo = null
 
 /obj/item/storage/bag/ore/proc/Pickup_ores(mob/living/user)
 	var/show_message = FALSE
@@ -134,12 +138,21 @@
 		return
 	if (istype(user.pulling, /obj/structure/ore_box))
 		box = user.pulling
-	GET_COMPONENT(STR, /datum/component/storage)
+	if(issilicon(user))
+		var/mob/living/silicon/robot/borgo = user
+		for(var/obj/item/cyborg_clamp/C in borgo.module.modules)
+			for(var/obj/structure/ore_box/B in C)
+				box = B
+
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		for(var/A in tile)
 			if (!is_type_in_typecache(A, STR.can_hold))
 				continue
 			if (box)
+				if(range)
+					for(var/obj/item/stack/ore/ore in range(range, user))
+						user.transferItemToLoc(ore, box)
 				user.transferItemToLoc(A, box)
 				show_message = TRUE
 			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
@@ -161,10 +174,11 @@
 
 /obj/item/storage/bag/ore/cyborg
 	name = "cyborg mining satchel"
+	range = 1
 
 /obj/item/storage/bag/ore/cyborg/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage/concrete/stack)
+	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
@@ -176,7 +190,7 @@
 
 /obj/item/storage/bag/ore/large/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage/concrete/stack)
+	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
@@ -189,7 +203,7 @@
 
 /obj/item/storage/bag/ore/holding/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage/concrete/stack)
+	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.max_items = INFINITY
 	STR.max_combined_w_class = INFINITY
 	STR.max_combined_stack_amount = INFINITY

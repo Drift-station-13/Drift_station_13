@@ -112,6 +112,10 @@
 	var/sitting = 0
 	var/bellyup = 0
 
+	var/orebox = null
+
+/mob/living/silicon/robot
+
 /mob/living/silicon/robot/get_cell()
 	return cell
 

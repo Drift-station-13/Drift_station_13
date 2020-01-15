@@ -16,6 +16,20 @@
 	toolspeed = 1
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
+	var/digrange = 1
+
+/obj/item/pickaxe/attack_self(mob/user)
+	if(initial(digrange) > 0)
+		if(digrange == 0)
+			digrange = initial(digrange)
+			toolspeed = initial(toolspeed)
+			to_chat(user, "<span class='notice'>You increase the tools dig range, decreasing its mining speed.</span>")
+		else
+			digrange = 0
+			toolspeed = toolspeed/2
+			to_chat(user, "<span class='notice'>You decrease the tools dig range, increasing its mining speed.</span>")
+	else
+		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
 
 /obj/item/pickaxe/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -66,6 +80,7 @@
 	name = "cyborg mining drill"
 	desc = "An integrated electric mining drill."
 	flags_1 = NONE
+	toolspeed = 0.5
 
 /obj/item/pickaxe/drill/cyborg/Initialize()
 	. = ..()
@@ -81,13 +96,15 @@
 	name = "diamond-tipped cyborg mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
 	icon_state = "diamonddrill"
 	toolspeed = 0.1
+	digrange = 2
 
 /obj/item/pickaxe/drill/jackhammer
 	name = "sonic jackhammer"
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
 	w_class = WEIGHT_CLASS_HUGE
-	toolspeed = 0.1 //the epitome of powertools. extremely fast mining,
+	toolspeed = 0.1 //the epitome of powertools. extremely fast mining.
+	digrange = 2
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "Cracks rocks with sonic blasts."
